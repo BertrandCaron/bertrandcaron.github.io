@@ -1,0 +1,48 @@
+BODY {
+	FONT-SIZE: 10pt; MARGIN: 20px 30px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.gdtitre {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 16pt; PADDING-BOTTOM: 2px; COLOR: white; PADDING-TOP: 2px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #993300; TEXT-ALIGN: left
+}
+H1 {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 16pt; PADDING-BOTTOM: 2px; COLOR: white; PADDING-TOP: 2px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #993300; TEXT-ALIGN: left
+}
+H2 {
+	BORDER-RIGHT: black 0px solid; PADDING-RIGHT: 2px; BORDER-TOP: black 1px solid; MARGIN-TOP: 0px; PADDING-LEFT: 2px; FONT-SIZE: 12pt; PADDING-BOTTOM: 2px; BORDER-LEFT: black 0px solid; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.petit {
+	FONT-SIZE: 0.8em; LINE-HEIGHT: 1.7em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.soustitre {
+	FONT-WEIGHT: bold; FONT-STYLE: italic
+}
+UL {
+	MARGIN-TOP: 0px
+}
+A:link {
+	FONT-WEIGHT: bold; COLOR: #993300; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: bold; COLOR: #993300; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; COLOR: #ffffff; BACKGROUND-COLOR: maroon
+}
+A {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 1.6em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+P {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 1.6em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+TD {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 1.6em; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A.menu:link {
+	FONT-SIZE: 1em; LINE-HEIGHT: 1.7em
+}
+A.menu:visited {
+	FONT-SIZE: 1em; LINE-HEIGHT: 1.7em
+}
+A.menu:hover {
+	FONT-SIZE: 1em; LINE-HEIGHT: 1.7em
+}
