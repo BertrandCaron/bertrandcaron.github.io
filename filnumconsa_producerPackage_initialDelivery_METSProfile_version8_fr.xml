@@ -1,0 +1,3920 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="metsProfileToHtml_fr.xsl"?>
+<METS_Profile xmlns="http://www.loc.gov/METS_Profile/v2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:mets="http://www.loc.gov/METS/" xmlns:premis="info:lc/xmlns/premis-v2" xmlns:spar_dc="http://bibnum.bnf.fr/ns/spar_dc" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" REGISTRATION="unregistered" STATUS="final">
+	<URI ASSIGNEDBY="local" LOCTYPE="URL">http://bibnum.bnf.fr/mets/filnumconsa_producerPackage_initialDelivery_METSProfile_version8.xml</URI>
+	<title xml:lang="en">METS profile for heritage digitization producer packages version 8</title>
+	<title xml:lang="fr">Profil METS des paquets producteur produits dans le cadre de la
+		numérisation patrimoniale, version 8</title>
+	<abstract xml:lang="en">This profile specifies the constraints that the BnF adds to the packages
+		natively produced by its contractors in the METS format. It is related to digitized 2D
+		documents (textual monographs, periodicals, still images, manuscripts, etc.) submitted for
+		the first time to the BnF repository. It restricts the BnF generic METS profile. It is a
+		transcription of the METS guidelines for digitization published by the BnF
+		(https://www.bnf.fr/sites/default/files/2021-01/ref_num_metadonnees_mets.pdf) All MUST, MUST
+		NOT, SHOULD, SHOULD NOT and MAY terms are used according to the meaning defined in RFC 2119
+		(http://www.ietf.org/rfc/rfc2119.txt) </abstract>
+	<abstract xml:lang="fr">Ce profil donne les exigences de la BnF sur les manifestes produits
+		nativement au format METS. Il concerne les documents 2D numérisés (monographies textuelles,
+		périodiques, images fixes, manuscrits, etc.) dont aucune version numérisée n'a été
+		précédemment livrée à la BnF. Il est une restriction du profil METS générique BnF. Il s'agit
+		d'une transcription du référentiel METS pour la numérisation publié par la BnF
+		(https://www.bnf.fr/sites/default/files/2021-01/ref_num_metadonnees_mets.pdf). Les degrés
+		d'exigence sont exprimés selon la RFC 2119 (http://www.ietf.org/rfc/rfc2119.txt) en
+		utilisant la traduction suivante : MUST=DOIT, MUST NOT=NE DOIT PAS, SHOULD= IL EST
+		RECOMMANDE QUE, SHOULD NOT=IL EST DECONSEILLE QUE, MAY=PEUT. </abstract>
+	<date>2021-01-07T17:00:00Z</date>
+	<contact ROLE="creator">
+		<name>BnF Digital Repository Team</name>
+		<institution>Bibliothèque nationale de France</institution>
+		<address> Quai François Mauriac 75706 PARIS cedex 13 FRANCE </address>
+		<phone>+(33) 1 53 79 42 23</phone>
+		<email>bertrand.caron@bnf.fr</email>
+	</contact>
+	<contact ROLE="maintenance agency">
+		<institution>Bibliothèque nationale de France</institution>
+		<address> Quai François Mauriac 75706 PARIS cedex 13 FRANCE </address>
+	</contact>
+	<related_profile RELATIONSHIP="isImplementedIn" URI="http://bibnum.bnf.fr/mets/filnumconsa_producerPackage_initialDelivery_Schematron_version8.sch">Corresponding actionable Schematron profile</related_profile>
+	<related_profile RELATIONSHIP="restricts" URI="http://bibnum.bnf.fr/mets/generic_global_METSProfile_version8.xml">Generic METS
+		profile</related_profile>
+	<related_profile RELATIONSHIP="supersedes" URI="http://bibnum.bnf.fr/mets/filnumconsa_producerPackage_initialDelivery_METSProfile_version6.xml">Previously submitted version of this generic METS profile.</related_profile>
+	<profile_context>
+		<resource_model>
+			<xhtml:p xml:lang="fr">Ce profil est destiné aux paquets producteur soumis à la chaîne
+				d'entrée pour validation dans le cadre d'une livraison initiale de documents en 2D
+					numérisés.<xhtml:img src="http://bibnum.bnf.fr/mets/filnumconsa_producerPackage_initialDelivery_illustration_20160615_fr.png" alt="Schéma général de processus"/></xhtml:p>
+			<xhtml:p xml:lang="en">This profile is intended for a 2D digitized document initially
+				delivered as a producer package submitted to the entry chain to be
+					validated.<xhtml:img src="http://bibnum.bnf.fr/mets/filnumconsa_producerPackage_initialDelivery_illustration_20160615_en.png" alt="Generic process diagram"/></xhtml:p>
+		</resource_model>
+	</profile_context>
+	<external_schema>
+		<name>Dublin Core Elements XML Schema, version 1.1</name>
+		<URL TARGETNAMESPACE="http://purl.org/dc/elements/1.1/">http://dublincore.org/schemas/xmls/qdc/dc.xsd</URL>
+		<context>/mets/dmdSec/mdWrap/xmlData</context>
+		<context>/mets/amdSec/sourceMD/mdWrap/xmlData</context>
+	</external_schema>
+	<external_schema>
+		<name>Dublin Core terms</name>
+		<URL TARGETNAMESPACE="http://purl.org/dc/terms/">http://dublincore.org/schemas/xmls/qdc/dcterms.xsd</URL>
+		<context>/mets/dmdSec/mdWrap/xmlData</context>
+		<context>/mets/amdSec/sourceMD/mdWrap/xmlData</context>
+	</external_schema>
+	<external_schema>
+		<name>Qualified Dublin Core for SPAR packages</name>
+		<URL TARGETNAMESPACE="http://bibnum.bnf.fr/ns/spar_dc">http://bibnum.bnf.fr/ns/spar_dc.xsd</URL>
+		<context>/mets/dmdSec/mdWrap/xmlData</context>
+		<context>/mets/amdSec/sourceMd/mdWrap/xmlData</context>
+		<note>
+			<xhtml:p xml:lang="en">This schema inherits all Dublin Core elements and terms, with
+				some additional qualifications (sequential designations, pagination types or bar
+				codes, for example)</xhtml:p>
+			<xhtml:p xml:lang="fr">Ce schéma hérite de tout Dublin Core elements et Dublin Core
+				terms, avec quelques qualificatifs supplémentaires (volumaisons, types de pagination
+				ou codes barre, par exemple)</xhtml:p>
+		</note>
+	</external_schema>
+	<external_schema>
+		<name>PREMIS Preservation metadata, version 2</name>
+		<URL TARGETNAMESPACE="info:lc/xmlns/premis-v2">http://www.loc.gov/standards/premis/v2/premis-v2-2.xsd</URL>
+		<context>/mets/amdSec/digiprovMD/mdWrap/xmlData</context>
+	</external_schema>
+	<description_rules>
+		<xhtml:p xml:lang="en">When a dmdSec is used, any Dublin Core Element used in it SHOULD
+			conform to BnF's Dublin Core implementation guidelines
+			(http://bibnum.bnf.fr/oai/GuideOAI_2008_09_08.pdf), except for the dc:type that uses a
+			repository-specific controlled vocabulary. The cardinalities of these elements are
+			repository-specific</xhtml:p>
+		<xhtml:p xml:lang="fr">Lorsqu'une dmdSec est utilisée, il est RECOMMANDE que tous les
+			éléments issus du Dublin Core simple et qualifié soient conformes au Guide d'utilisation
+			du Dublin Core à la BnF (http://bibnum.bnf.fr/oai/GuideOAI_2008_09_08.pdf), sauf pour le
+			dc:type qui utilise une liste de valeurs contrôlées propre au système de préservation.
+			La cardinalité de ces éléments est propre à l'entrepôt.</xhtml:p>
+	</description_rules>
+	<controlled_vocabularies>
+		<vocabulary>
+			<name xml:lang="fr">Type de carte de structure</name>
+			<name xml:lang="en">Structural map type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=15</URI>
+			<values>
+				<value>physical</value>
+				<value>toc</value>
+				<value>ebook</value>
+				<value>attachment</value>
+			</values>
+			<context>/mets:mets/mets:structMap/@TYPE</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Type de division</name>
+			<name xml:lang="en">Division type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=13</URI>
+			<values>
+				<value>set</value>
+				<value>group</value>
+				<value>object</value>
+			</values>
+			<context>/mets:mets/mets:structMap//mets:div/@TYPE</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Usage du groupe de fichiers</name>
+			<name xml:lang="en">Intended use of the file group</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=14</URI>
+			<values>
+				<value>master</value>
+				<value>ocr</value>
+				<value>toc</value>
+				<value>colorProfile</value>
+				<value>epub</value>
+				<value>adaptative</value>
+			</values>
+			<context>/mets:mets/mets:fileSec/mets:fileGrp/@USE</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Type d'événement</name>
+			<name xml:lang="en">Event type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=42</URI>
+			<values>
+				<value>digitization</value>
+				<value>groupDefinition</value>
+				<value>ocerization</value>
+				<value>ocrSegmentation</value>
+				<value>ocrCorrection</value>
+				<value>conversionToAlto</value>
+				<value>namedEntitiesRecognition</value>
+				<value>tocCreation</value>
+				<value>olrSegmentation</value>
+				<value>informationExtraction</value>
+				<value>headlinesDetection</value>
+				<value>authorsDetection</value>
+				<value>contentClassification</value>
+				<value>colorProfile</value>
+				<value>ebookCreation</value>
+				<value>adaptativeCreation</value>
+				<value>qualityAssessment</value>
+				<value>userComment</value>
+				<value>producerComment</value>
+				<value>digitizationRequests</value>
+				<value>packageDelivery</value>
+				<value>compression</value>
+				<value>pageSplitting</value>
+			</values>
+			<context>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventType</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Type d'agent</name>
+			<name xml:lang="en">Agent type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=15</URI>
+			<values>
+				<value>organization</value>
+				<value>software</value>
+				<value>hardware</value>
+			</values>
+			<context>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:agent/premis:agentType</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Rôle d'agent</name>
+			<name xml:lang="en">Agent role</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=16</URI>
+			<values>
+				<value>performer</value>
+				<value>issuer</value>
+				<value>implementer</value>
+				<value>authorizer</value>
+			</values>
+			<context>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:linkingAgentIdentifier/premis:linkingAgentRole</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Type de page</name>
+			<name xml:lang="en">Page type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=86</URI>
+			<values>
+				<value>cover</value>
+				<value>entry</value>
+				<value>toc</value>
+				<value>index</value>
+				<value>no links toc</value>
+				<value>logo</value>
+				<value>binding</value>
+				<value>illustration</value>
+				<value>advertisement</value>
+				<value>downgraded index</value>
+				<value>downgraded toc</value>
+			</values>
+			<context>/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='object']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:description</context>
+		</vocabulary>
+		<vocabulary>
+			<name xml:lang="fr">Type de support d'origine</name>
+			<name xml:lang="en">Original medium type</name>
+			<maintenance_agency>BnF</maintenance_agency>
+			<URI>https://www.bnf.fr/sites/default/files/2020-10/ref_num_metadonnees_mets.pdf#page=112</URI>
+			<values>
+				<value>Calque</value>
+				<value>Cylindre</value>
+				<value>Microfilm 35 mm en couleur positif</value>
+				<value>Microfilm 35 mm en couleur négatif</value>
+				<value>Microfilm 35 mm en demi-teinte positif</value>
+				<value>Microfilm 35 mm en demi-teinte négatif</value>
+				<value>Microfilm 35 mm en noir et blanc positif</value>
+				<value>Microfilm 35 mm en noir et blanc négatif</value>
+				<value>Microfilm 16 mm en demi-teinte positif</value>
+				<value>Microfilm 16 mm en demi-teinte négatif</value>
+				<value>Microfilm 16 mm en noir et blanc positif</value>
+				<value>Microfilm 16 mm en noir et blanc négatif</value>
+				<value>Microfiche mono vue en couleur positive</value>
+				<value>Microfiche mono vue en demi-teinte positive</value>
+				<value>Microfiche mono vue en demi-teinte négative</value>
+				<value>Microfiche mono vue en noir et blanc positive</value>
+				<value>Microfiche mono vue en noir et blanc négative</value>
+				<value>Microfiche de partition 30 vues en noir et blanc positive</value>
+				<value>Microfiche de partition 30 vues en noir et blanc négative</value>
+				<value>Microfiche de partition 49 vues en noir et blanc positive</value>
+				<value>Microfiche de partition 49 vues en noir et blanc négative</value>
+				<value>Microfiche de partition 60 vues en noir et blanc positive</value>
+				<value>Microfiche de partition 60 vues en noir et blanc négative</value>
+				<value>Microfiche de partition 98 vues en noir et blanc positive</value>
+				<value>Microfiche de partition 98 vues en noir et blanc négative</value>
+				<value>Microfiche de partition non définie en noir et blanc positive</value>
+				<value>Microfiche de partition non définie en noir et blanc négative</value>
+				<value>Papier massicoté en couleur</value>
+				<value>Papier massicoté en demi-teinte</value>
+				<value>Papier massicoté en noir et blanc</value>
+				<value>Papier relié en couleur</value>
+				<value>Papier relié en demi-teinte</value>
+				<value>Papier relié en noir et blanc</value>
+				<value>Papier en feuille en couleur</value>
+				<value>Papier en feuille en demi-teinte</value>
+				<value>Papier en feuille en noir et blanc</value>
+				<value>Objet</value>
+				<value>Support transparent souple photographique positif noir et blanc</value>
+				<value>Support transparent souple photographique positif couleur</value>
+				<value>Support transparent souple photographique négatif noir et blanc</value>
+				<value>Support transparent souple photographique négatif couleur</value>
+				<value>Support transparent verre photographique positif noir et blanc</value>
+				<value>Support transparent verre photographique positif couleur</value>
+				<value>Support transparent verre photographique négatif noir et blanc</value>
+				<value>Support transparent verre photographique négatif couleur</value>
+				<value>Support opaque papier photographique positif noir et blanc</value>
+				<value>Support opaque papier photographique positif couleur</value>
+				<value>Support opaque papier photographique négatif noir et blanc</value>
+				<value>Support opaque papier photographique négatif couleur</value>
+				<value>Support opaque autre photographique positif noir et blanc</value>
+				<value>Support opaque autre photographique positif couleur</value>
+				<value>Support opaque autre photographique négatif noir et blanc</value>
+				<value>Support opaque autre photographique négatif couleur</value>
+			</values>
+			<context>/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:description[@xml:lang="fr"]</context>
+		</vocabulary>
+	</controlled_vocabularies>
+	<structural_requirements>
+		<metsHdr>
+			<requirement REQLEVEL="MUST" ID="RULE.1">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST contain a
+						&lt;metsHdr&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil DOIT contenir un
+						élément &lt;metsHdr&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:metsHdr)=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.2">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;metsHdr&gt; element MUST be identified by an ID
+						attribute beginning with a 'HDR.' character string.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;metsHdr&gt; DOIT être identifié par un
+						attribut ID commençant par la chaîne de caractères 'HDR.'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:metsHdr">
+									<iso:assert test="@ID"/>
+									<iso:assert test="starts-with(@ID, 'HDR.')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.3">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;metsHdr&gt; element MUST contain CREATEDATE and
+						LASTMODDATE attributes.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;metsHdr&gt; DOIT contenir les attributs
+						CREATEDATE et LASTMODDATE .</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:metsHdr">
+									<iso:assert test="@CREATEDATE"/>
+									<iso:assert test="@LASTMODDATE"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.4">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;metsHdr&gt; element MUST contain an element
+						altRecordID of TYPE 'producerIdentifier' whose value MUST be 'NUM' or
+						'IFN'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;metsHdr&gt; DOIT contenir un élément
+						altRecordID de TYPE 'producerIdentifier' dont la valeur DOIT être 'NUM' ou
+						'IFN'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:metsHdr">
+									<iso:assert test="count(mets:altRecordID[@TYPE='producerIdentifier'])=1"/>
+									<iso:assert test="mets:altRecordID[@TYPE='producerIdentifier']='NUM' or mets:altRecordID[@TYPE='producerIdentifier']='IFN'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.5">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;metsHdr&gt; element MUST contain an element
+						altRecordID of TYPE 'productionIdentifier'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;metsHdr&gt; DOIT contenir un élément
+						altRecordID de TYPE 'productionIdentifier'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:metsHdr">
+									<iso:assert test="count(mets:altRecordID[@TYPE='productionIdentifier'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.6">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;altRecordID&gt; of type 'productionIdentifier'
+						MUST be a string of an undefined number of digits.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;altRecordID&gt; de type
+						'productionIdentifier' DOIT être une chaîne de caractères composé d'un
+						nombre indéfini de chiffres.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:metsHdr/mets:altRecordID[@TYPE='productionIdentifier']">
+									<iso:assert test="string(.) castable as xs:nonNegativeInteger"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</metsHdr>
+		<dmdSec>
+			<requirement REQLEVEL="MUST" ID="RULE.7">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;dmdSec&gt; section, if any, MUST be identified by
+						an ID attribute and the value of this attribute MUST begin with a 'DMD.'
+						character string.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le cas échéant, une section &lt;dmdSec&gt; DOIT être
+						identifiée par un attribut ID, et la valeur de cet attribut doit commencer
+						par la chaîne de caractères 'DMD.'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec">
+									<iso:assert test="@ID"/>
+									<iso:assert test="starts-with(@ID, 'DMD.')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.8">
+				<description>
+					<xhtml:p xml:lang="en">Each &lt;dmdSec&gt; element MUST be referred by at least
+						one METS element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout élément &lt;dmdSec&gt; DOIT faire l'objet d'une
+						référence à partir d'au moins un élément METS.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="count(//*[tokenize(string(@DMDID), ' ') = $ID]) &gt;= 1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.9">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:type&gt; elements contained in a &lt;dmdSec&gt;
+						section MUST have one of the following values: 'monograph', 'multivolume
+						monograph', 'periodical' or 'still images'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:type&gt; contenus dans une section
+						dmdSec DOIVENT avoir l'une des valeurs suivantes : 'monograph', 'multivolume
+						monograph', 'periodical' ou 'still images'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:type">
+									<iso:assert test="text()='monograph' or text()='multivolume monograph' or text()='periodical' or text()='still images'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.10">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;dmdSec&gt; element linked to a &lt;div&gt; element
+						of type 'set' or 'group', MUST contain a &lt;dc:type&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;dmdSec&gt; lié à un élément &lt;div&gt; de
+						type 'set' ou 'group', DOIT contenir un élément &lt;dc:type&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='set' or @TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc">
+									<iso:assert test="count(dc:type)&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.11">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:type&gt; elements contained in &lt;dmdSec&gt;
+						elements linked to a &lt;div&gt; element of type 'set' or 'group' MUST have
+						the same value.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:type&gt; contenus dans un élément
+						&lt;dmdSec&gt; lié à un élément &lt;div&gt; de type 'set' ou 'group' DOIVENT
+						avoir la même valeur.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='set']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc">
+									<iso:assert test="dc:type/text() = /mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:type/text()"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.12">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dmdSec&gt; elements linked to a &lt;div&gt; element
+						of TYPE 'set' or 'group' MUST contain a &lt;dc:relation&gt; element of type
+						'spar_dc:ark' mentioning the ARK identifier of the catalog record
+						.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dmdSec&gt; liés à un élément &lt;div&gt;
+						de TYPE 'set' ou 'group' DOIVENT contenir un élément &lt;dc:relation&gt; de
+						type 'spar_dc:ark' mentionnant l'identifiant ARK de la notice du catalogue
+						.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID = /mets:mets/mets:structMap//mets:div[@TYPE='group' or @TYPE='set']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc">
+									<iso:assert test="dc:relation[@xsi:type='spar_dc:ark']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.13">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dmdSec&gt; elements linked to a &lt;div&gt; element
+						of TYPE 'group' MUST contain a &lt;dcterms:provenance&gt; element
+						.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dmdSec&gt; liés à un élément &lt;div&gt;
+						de TYPE 'group' DOIVENT contenir un élément
+						&lt;dcterms:provenance&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID = /mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc">
+									<iso:assert test="dcterms:provenance"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.14">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:date&gt; elements contained in a &lt;dmdSec&gt;
+						section describing a periodical issue MUST conform to the ISO 8601
+						standard.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:date&gt; contenus dans une section
+						dmdSec décrivant un fascicule de périodique DOIVENT se conformer à la norme
+						ISO 8601.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type='periodical']/dc:date">
+									<iso:assert test="matches(text(), '^[0-9]{4}(\-[0-9]{2})?(\-[0-9]{2})?(/[0-9]{4})?(\-[0-9]{2})?(\-[0-9]{2})?$')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST NOT" ID="RULE.15">
+				<description>
+					<xhtml:p xml:lang="en">A digital object of type 'still images' or 'monograph'
+						MUST NOT contain a &lt;dc:description&gt; element of type
+						'spar_dc:sequentialDesignation1', 'spar_dc:sequentialDesignation2' nor
+						'spar_dc:sequentialDesignation3' in the &lt;dmdSec&gt; element linked to the
+						&lt;div&gt; element of type 'group'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un objet numérique de type 'still images' ou 'monograph'
+						NE DOIT PAS contenir un élément &lt;dc:description&gt; de type
+						'spar_dc:sequentialDesignation1', 'spar_dc:sequentialDesignation2' ni
+						'spar_dc:sequentialDesignation3' dans l'élément &lt;dmdSec&gt; lié à
+						l'élément &lt;div&gt; de type 'group'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[not(dc:type/text()='periodical') and not(dc:type/text()='multivolume monograph')]">
+									<iso:assert test="not(dc:description[@xsi:type='spar_dc:sequentialDesignation1']) and not(dc:description[@xsi:type='spar_dc:sequentialDesignation2']) and not(dc:description[@xsi:type='spar_dc:sequentialDesignation3'])"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="SHOULD" ID="RULE.16">
+				<description>
+					<xhtml:p xml:lang="en">A digital object of type 'periodical' or 'multivolume
+						monograph' SHOULD contain a &lt;dc:description&gt; element of type
+						'spar_dc:sequentialDesignation1' in the &lt;dmdSec&gt; element linked to the
+						&lt;div&gt; element of type 'group'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un objet numérique de type 'periodical' ou 'multivolume
+						monograph' DEVRAIT contenir un élément &lt;dc:description&gt; de type
+						'spar_dc:sequentialDesignation1' dans l'élément &lt;dmdSec&gt; lié à
+						l'élément &lt;div&gt; de type 'group'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='periodical' or dc:type/text()='multivolume monograph']">
+									<iso:report level="warn" test="not(dc:description[@xsi:type='spar_dc:sequentialDesignation1'])"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.17">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:description&gt; of type
+						'sequentialDesignation1/2/3' elements contained in a &lt;dmdSec&gt; section
+						describing a monograph volume MUST start with one of the following terms:
+						'Année', 'Cahier', 'Fascicule', 'Numéro', 'Partie', 'Section', 'Série',
+						'Tome' or 'Volume', then a space, then numbers, upper-case letters or
+						dashes.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:description&gt; de type
+						'sequentialDesignation1/2/3' contenus dans une section dmdSec décrivant un
+						volume de monographie DOIVENT commencer par l'une des valeurs suivantes :
+						'Année', 'Cahier', 'Fascicule', 'Numéro', 'Partie', 'Section', 'Série',
+						'Tome' ou 'Volume', puis un espace, puis des nombres, des lettres majuscules
+						ou des tirets.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type='multivolume monograph']/dc:description[@xsi:type='spar_dc:sequentialDesignation1' or @xsi:type='spar_dc:sequentialDesignation2' or @xsi:type='spar_dc:sequentialDesignation3']">
+									<iso:assert test="starts-with(text(), 'Année') or starts-with(text(), 'Cahier') or starts-with(text(), 'Fascicule') or starts-with(text(), 'Numéro') or starts-with(text(), 'Partie') or starts-with(text(), 'Section') or starts-with(text(), 'Série') or starts-with(text(), 'Tome') or starts-with(text(), 'Volume')"/>
+									<iso:assert test="matches(text(), '^\p{L}+\s[0-9]*\-?[0-9]*[A-Z]*$')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.18">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:description&gt; of type
+						'sequentialDesignation1/2/3' elements contained in a &lt;dmdSec&gt; section
+						describing a periodical issue MUST start with one of the following terms:
+						'Année', 'Cahier', 'Edition', 'Fascicule', 'Numéro', 'Partie', 'Section',
+						'Série', 'Tome' or 'Volume', then a space, then numbers, upper-case letters
+						or dashes.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:description&gt; de type
+						'sequentialDesignation1/2/3' contenus dans une section dmdSec DOIVENT
+						commencer par l'une des valeurs suivantes : 'Année', 'Cahier', 'Edition',
+						'Fascicule', 'Numéro', 'Partie', 'Section', 'Série', 'Tome' ou 'Volume',
+						puis un espace, puis des nombres, des lettres majuscules ou des
+						tirets.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type='periodical']/dc:description[@xsi:type='spar_dc:sequentialDesignation1' or @xsi:type='spar_dc:sequentialDesignation2' or @xsi:type='spar_dc:sequentialDesignation3']">
+									<iso:assert test="starts-with(text(), 'Année') or starts-with(text(), 'Cahier')  or starts-with(text(), 'Edition') or starts-with(text(), 'Fascicule') or starts-with(text(), 'Numéro') or starts-with(text(), 'Partie') or starts-with(text(), 'Section') or starts-with(text(), 'Série') or starts-with(text(), 'Tome') or starts-with(text(), 'Volume')"/>
+									<iso:assert test="matches(text(), '^\p{L}+\s[0-9]*\-?[0-9]*[A-Z]*$')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.19">
+				<description>
+					<xhtml:p xml:lang="en">The value of the element&lt;dc:title&gt; contained in a
+						&lt;dmdSec&gt;element referred from a &lt;div&gt; of type 'group' describing
+						a digital object of type 'periodical' MUST be the value of the
+						&lt;dc:date&gt; element contained in the same &lt;dmdSec&gt; element
+						concatenated with ' (', then the value of the &lt;dc:description&gt; element
+						of type 'sequentialDesignation1', then, if relevant ', ', then the
+						&lt;dc:description&gt; element of type 'sequentialDesignation2', then, if
+						relevant, ', ', then the &lt;dc:description&gt; element of type
+						'sequentialDesignation3' then ')'.</xhtml:p>
+					<xhtml:p xml:lang="fr">La valeur de l'élément &lt;dc:title&gt; contenu dans une
+						section dmdSec liée à un élément &lt;div&gt; de niveau 'group' décrivant un
+						objet numérique de type 'periodical' DOIT être égale à la valeur de
+						l'élément &lt;dc:date&gt; dans le même élément &lt;dmdSec&gt; concaténé avec
+						' (', puis la valeur de l'élément &lt;dc:description&gt; de type
+						'sequentialDesignation1', puis le cas échéant ', ', puis l'élément
+						&lt;dc:description&gt; de type 'sequentialDesignation2', puis le cas échéant
+						', ', puis l'élément &lt;dc:description&gt; de type 'sequentialDesignation3'
+						et ')'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='periodical'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and not(dc:description[@xsi:type='spar_dc:sequentialDesignation2']) and not(dc:description[@xsi:type='spar_dc:sequentialDesignation3'])]">
+									<iso:assert test="dc:title/text()=concat(dc:date, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ')')"/>
+								</iso:rule>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='periodical'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and dc:description[@xsi:type='spar_dc:sequentialDesignation2'] and not(dc:description[@xsi:type='spar_dc:sequentialDesignation3'])]">
+									<iso:assert test="dc:title/text()=concat(dc:date, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation2'], ')')"/>
+								</iso:rule>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='periodical'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and dc:description[@xsi:type='spar_dc:sequentialDesignation2'] and dc:description[@xsi:type='spar_dc:sequentialDesignation3']]">
+									<iso:assert test="dc:title/text()=concat(dc:date, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation2'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation3'], ')')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.20">
+				<description>
+					<xhtml:p xml:lang="en">The value of the element&lt;dc:title&gt; contained in a
+						&lt;dmdSec&gt;element referred from a &lt;div&gt; of type 'group' describing
+						a digital object of type 'multivolume monograph' MUST be the value of the
+						&lt;dc:title&gt; element contained in the &lt;dmdSec&gt; element referred
+						from a &lt;div&gt; of type 'set' concatenated with ' (', then the value of
+						the &lt;dc:description&gt; element of type 'sequentialDesignation1', then,
+						if relevant ', ', then the &lt;dc:description&gt; element of type
+						'sequentialDesignation2', then, if relevant, ', ', then the
+						&lt;dc:description&gt; element of type 'sequentialDesignation3' then
+						')'.</xhtml:p>
+					<xhtml:p xml:lang="fr">La valeur de l'élément &lt;dc:title&gt; contenu dans une
+						section dmdSec liée à un élément &lt;div&gt; de niveau 'group' décrivant un
+						objet numérique de type 'multivolume monograph' DOIT être égale à la valeur
+						de l'élément &lt;dc:title&gt; contenu dans l'élément &lt;dmdSec&gt; lié à
+						l'élément &lt;div&gt; de niveau 'set' concaténé avec ' (', puis la valeur de
+						l'élément &lt;dc:description&gt; de type 'sequentialDesignation1', puis le
+						cas échéant ', ', puis l'élément &lt;dc:description&gt; de type
+						'sequentialDesignation2', puis le cas échéant ', ', puis l'élément
+						&lt;dc:description&gt; de type 'sequentialDesignation3' et ')'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='multivolume monograph'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and not(dc:description[@xsi:type='spar_dc:sequentialDesignation2']) and not(dc:description[@xsi:type='spar_dc:sequentialDesignation3'])]">
+									<iso:let name="setTitle" value="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='set']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:title"/>
+									<iso:assert test="dc:title/text()=concat($setTitle, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ')')"/>
+								</iso:rule>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='multivolume monograph'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and dc:description[@xsi:type='spar_dc:sequentialDesignation2'] and not(dc:description[@xsi:type='spar_dc:sequentialDesignation3'])]">
+									<iso:let name="setTitle" value="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='set']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:title"/>
+									<iso:assert test="dc:title/text()=concat($setTitle, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation2'], ')')"/>
+								</iso:rule>
+								<iso:rule context="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='multivolume monograph'][dc:description[@xsi:type='spar_dc:sequentialDesignation1'] and dc:description[@xsi:type='spar_dc:sequentialDesignation2'] and dc:description[@xsi:type='spar_dc:sequentialDesignation3']]">
+									<iso:let name="setTitle" value="/mets:mets/mets:dmdSec[@ID=/mets:mets/mets:structMap//mets:div[@TYPE='set']/@DMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:title"/>
+									<iso:assert test="dc:title/text()=concat($setTitle, ' (', dc:description[@xsi:type='spar_dc:sequentialDesignation1'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation2'], ', ', dc:description[@xsi:type='spar_dc:sequentialDesignation3'], ')')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</dmdSec>
+		<amdSec>
+			<requirement REQLEVEL="MUST" ID="RULE.21">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST contain
+						one and only one &lt;amdSec&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil DOIT contenir un et
+						un seul élement &lt;amdSec&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:amdSec)=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST NOT" ID="RULE.22">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST NOT
+						contain a &lt;techMD&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil NE DOIT PAS contenir
+						d'élément &lt;techMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:techMD)=0"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST NOT" ID="RULE.23">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST NOT
+						contain a &lt;rightsMD&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil NE DOIT PAS contenir
+						d'élement &lt;rightsMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:rightsMD)=0"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.24">
+				<description>
+					<xhtml:p xml:lang="en">Each subsection of &lt;amdSec&gt; MUST be identified by
+						an ID attribute and the value of this attribute MUST begin with an 'AMD.'
+						character string.</xhtml:p>
+					<xhtml:p xml:lang="fr">Toute sous-section d'&lt;amdSec&gt; DOIT être identifiée
+						par un attribut ID, et la valeur de cet attribut doit commencer par la
+						chaîne de caractères 'AMD.'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/*">
+									<iso:assert test="@ID"/>
+									<iso:assert test="starts-with(@ID, 'AMD.')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.25">
+				<description>
+					<xhtml:p xml:lang="en">Each subsection of &lt;amdSec&gt; MUST be referred by at
+						least one METS element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Toute sous-section d'&lt;amdSec&gt; DOIT faire l'objet
+						d'une référence à partir d'au moins un élément METS.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/*">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="count(//*[tokenize(string(@ADMID), ' ') = $ID]) &gt;= 1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.26">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST contain
+						at least one &lt;sourceMD&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil DOIT contenir au
+						moins un élément &lt;sourceMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:sourceMD)&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.27">
+				<description>
+					<xhtml:p xml:lang="en">&lt;sourceMD&gt; elements MUST contain a
+						&lt;dc:identifier&gt; element of type spar_dc:barCode and a
+						&lt;dc:identifier&gt; element of type
+						spar_dc:originalObjectCallNumber.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;sourceMD&gt; DOIVENT contenir un élément
+						&lt;dc:identifier&gt; de type spar_dc:barCode et un élément
+						&lt;dc:identifier&gt; de type spar_dc:originalObjectCallNumber.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc">
+									<iso:assert test="count(dc:identifier[@xsi:type='spar_dc:barCode'])=1"/>
+									<iso:assert test="count(dc:identifier[@xsi:type='spar_dc:originalObjectCallNumber'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.28">
+				<description>
+					<xhtml:p xml:lang="en">Every &lt;dc:identifier&gt; element of the same type
+						within a &lt;sourceMD&gt; element MUST have the same values.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tous les éléments &lt;dc:identifier&gt; de même type
+						contenus dans un élément &lt;sourceMD&gt; DOIVENT avoir les mêmes
+						valeurs.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(distinct-values(mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:barCode'])) = 1"/>
+									<iso:assert test="count(distinct-values(mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:originalObjectCallNumber'])) = 1"/>
+									<iso:assert test="count(distinct-values(mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:reproducedObjectCallNumber'])) &lt;= 1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.29">
+				<description>
+					<xhtml:p xml:lang="en">If used, a &lt;dc:identifier&gt; element of type
+						'spar_dc:reproducedObjectCallNumber' within a &lt;sourceMD&gt; element MUST
+						be present in every &lt;sourceMD&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">S'il est utilisé, l'élément &lt;dc:identifier&gt; de type
+						'spar_dc:reproducedObjectCallNumber' contenu dans un élément
+						&lt;sourceMD&gt; DOIT être présent dans tous les éléments
+						&lt;sourceMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:reproducedObjectCallNumber']">
+									<iso:assert test="count(/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:reproducedObjectCallNumber']) = count(/mets:mets/mets:amdSec/mets:sourceMD)"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.30">
+				<description>
+					<xhtml:p xml:lang="en">&lt;dc:identifier&gt; elements of type 'spar_dc:barCode'
+						MUST contain a 14-digit number, then '/', then a number, then '/', then a
+						number, or start with 'BCG' or 'BAM'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;dc:identifier&gt; de type
+						'spar_dc:barCode' DOIVENT contenir un nombre sur 14 positions, puis '/',
+						puis un nombre, puis '/', puis un nombre, ou commencer par 'BCG' ou
+						'BAM'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:barCode']">
+									<iso:assert test="matches(., '^[0-9]{14}/[0-9]*/[0-9]*$') or matches(., '^BAM') or matches(., '^BCG')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.31">
+				<description>
+					<xhtml:p xml:lang="en">If the &lt;dc:identifier&gt; element of type
+						'spar_dc:barCode' indicates the rank in a total number of units, the rank
+						MUST be an integer smaller or equal to the total number of units.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si l'élément &lt;dc:identifier&gt; de type
+						'spar_dc:barCode' indique la position de la partie sur un nombre total de
+						parties, la position de la partie DOIT être un entier égal ou inférieur au
+						nombre total de parties.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:sourceMD/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:identifier[@xsi:type='spar_dc:barCode'][matches(text(), '^[0-9]{14}/[0-9]*/[0-9]*$')]">
+									<iso:assert test="number(substring-before(substring-after(text(), '/'), '/')) &lt;= number(substring-after(substring-after(text(), '/'), '/'))"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.32">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;amdSec&gt; element MUST contain at least one
+						&lt;digiprovMD&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément &lt;amdSec&gt; DOIT contenir au moins un
+						élément &lt;digiprovMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD)&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.33">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element MUST contain a PREMIS Event
+						or a PREMIS Agent.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; doit comprendre un
+						événement ou un agent PREMIS.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD">
+									<iso:assert test="mets:mdWrap[@MIMETYPE='text/xml' and (@MDTYPE='PREMIS:EVENT' or 'PREMIS:AGENT')]"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.34">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing an &lt;mdWrap&gt;
+						element with the MIMETYPE="text/xml" and MDTYPE="PREMIS:EVENT" attributes
+						MUST contain a &lt;premis:event&gt; element within an &lt;xmlData&gt;
+						element</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un élément
+						&lt;mdWrap&gt; ayant comme attributs MIMETYPE="text/xml" et
+						MDTYPE="PREMIS:EVENT" DOIT contenir un élément &lt;premis:event&gt; à
+						l'intérieur d'un élément &lt;xmlData&gt;</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap[@MIMETYPE='text/xml' and @MDTYPE='PREMIS:EVENT']">
+									<iso:assert test="mets:xmlData/premis:event"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.35">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing an &lt;mdWrap&gt;
+						element with the MIMETYPE="text/xml" and MDTYPE="PREMIS:AGENT" attributes
+						MUST contain a &lt;premis:agent&gt; element within an &lt;xmlData&gt;
+						element</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un élément
+						&lt;mdWrap&gt; ayant comme attributs MIMETYPE="text/xml" et
+						MDTYPE="PREMIS:AGENT" DOIT contenir un élément &lt;premis:agent&gt; à
+						l'intérieur d'un élément &lt;xmlData&gt;</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap[@MIMETYPE='text/xml' and @MDTYPE='PREMIS:AGENT']">
+									<iso:assert test="mets:xmlData/premis:agent"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.36">
+				<description>
+					<xhtml:p xml:lang="en">Each PREMIS Event contained in a &lt;digiprovMD&gt;
+						element MUST be identified by a UUID. This MUST be declared in a
+						&lt;premis:eventIdentifierType&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout événement PREMIS compris dans un élément
+						&lt;digiprovMD&gt; DOIT être identifié par un UUID. Cela DOIT être déclaré
+						dans un élément &lt;premis:eventIdentifierType&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventIdentifier">
+									<iso:assert test="premis:eventIdentifierType='UUID'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.37">
+				<description>
+					<xhtml:p xml:lang="en">The value of the premis:eventDateTime element MUST be of
+						type 'xs:dateTime'.</xhtml:p>
+					<xhtml:p xml:lang="fr">La valeur de l'élément premis:eventDateTime DOIT être de
+						type 'xs:dateTime'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventDateTime">
+									<iso:assert test="string(.) castable as xs:dateTime"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.38">
+				<description>
+					<xhtml:p xml:lang="en">Each PREMIS Agent contained in a &lt;digiprovMD&gt;
+						element MUST be identified by a UUID. This MUST be declared in a
+						&lt;premis:agentIdentifierType&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout agent PREMIS compris dans un élément
+						&lt;digiprovMD&gt; DOIT être identifié par un UUID. Cela DOIT être déclaré
+						dans un élément &lt;premis:agentIdentifierType&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:agent/premis:agentIdentifier">
+									<iso:assert test="premis:agentIdentifierType='UUID'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.39">
+				<description>
+					<xhtml:p xml:lang="en">The content of a &lt;premis:agentNote&gt; element MUST
+						start by one of the following strings: 'origine : ', 'version : ' or 'numéro
+						de série : '.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le contenu d'un élément &lt;premis:agentNote&gt; DOIT
+						commencer par l'une des chaînes de caractères suivantes : 'origine : ',
+						'version : ' or 'numéro de série : '.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:agent/premis:agentNote">
+									<iso:assert test="starts-with(., 'origine : ') or starts-with(., 'version : ') or starts-with(., 'numéro de série : ')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.40">
+				<description>
+					<xhtml:p xml:lang="en">A UUID identifier MUST contain 36 characters.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un identifiant de type UUID DOIT comporter 36
+						caractères</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData">
+									<iso:assert test="string-length(premis:event/premis:eventIdentifier/premis:eventIdentifierValue/text())=36 or string-length(premis:agent/premis:agentIdentifier/premis:agentIdentifierValue/text())=36"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.41">
+				<description>
+					<xhtml:p xml:lang="en">Every UUID identifier contained in a
+						&lt;premis:eventIdentifierValue&gt; or in a
+						&lt;premis:agentIdentifierValue&gt; element MUST be distinct.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tous les identifiants de type UUID contenus dans un
+						élément &lt;premis:eventIdentifierValue&gt; ou
+						&lt;premis:agentIdentifierValue&gt; DOIVENT être distincts</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventIdentifier/premis:eventIdentifierValue) + count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:agent/premis:agentIdentifier/premis:agentIdentifierValue) = count(distinct-values(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventIdentifier/premis:eventIdentifierValue)) + count(distinct-values(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:agent/premis:agentIdentifier/premis:agentIdentifierValue))"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.42">
+				<description>
+					<xhtml:p xml:lang="en">Every PREMIS event MUST be linked to its PREMIS agents by
+						means of matching &lt;digiprov&gt; ID/ADMID attributes and
+						&lt;premis:linkingAgentIdentifierValue&gt;/&lt;premis:AgentIdentifierValue&gt;.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tous les événements PREMIS DOIVENT être liés à leurs
+						agents PREMIS par le moyen d'attributs ID/ADMID des éléments
+						&lt;digiprov&gt; et des éléments
+						&lt;premis:linkingAgentIdentifierValue&gt;/&lt;premis:AgentIdentifierValue&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:linkingAgentIdentifier/premis:linkingAgentIdentifierValue">
+									<iso:let name="ADMIDEvent" value="ancestor::mets:digiprovMD/@ADMID"/>
+									<iso:assert test="text() = /mets:mets/mets:amdSec/mets:digiprovMD[@ID=tokenize(string($ADMIDEvent), ' ')]/mets:mdWrap/mets:xmlData/premis:agent/premis:agentIdentifier/premis:agentIdentifierValue/text()"/>
+								</iso:rule>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event">
+									<iso:let name="numberOfAgents" value="count(premis:linkingAgentIdentifier/premis:linkingAgentIdentifierValue)"/>
+									<iso:assert test="$numberOfAgents = count(tokenize(string(ancestor::mets:digiprovMD/@ADMID), ' '))"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.43">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be one and only one &lt;digiprovMD&gt;
+						containing a &lt;premis:event&gt; of type 'digitization'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir un et un seul élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'digitization'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='digitization'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.44">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'digitization' MUST mention at
+						least two PREMIS linked agents of role 'performer, at least one PREMIS
+						linked agent of role 'implementer', and a &lt;premis:eventDetail&gt; element
+						containing the value 'manual treatment' or 'automatic treatment'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'digitization' DOIT mentionner
+						au moins deux agents PREMIS liés de rôle 'performer', au moins un agent
+						PREMIS lié de rôle 'implementer' et un élément &lt;premis:eventDetail&gt;
+						contenant la valeur 'manual treatment' ou 'automatic treatment'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='digitization']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=2"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+									<iso:assert test="premis:eventDetail/text() = 'manual treatment' or premis:eventDetail/text() = 'automatic treatment'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.45">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'digitization' MUST be of type 'software' and 'hardware' for the PREMIS
+						linked agents of role 'performer', and 'organization' for the PREMIS linked
+						agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'digitization' DOIVENT être de type 'software' et 'hardware' pour les agents
+						PREMIS de rôle 'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='digitization']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='hardware'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.46">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS events of type 'compression' and
+						'pageSplitting' MUST mention at least one PREMIS linked agent of role
+						'performer and at least one PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'digitization' DOIT mentionner
+						au moins un agent PREMIS lié de rôle 'performer' et au moins un agent PREMIS
+						lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='compression' or premis:eventType='pageSplitting']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.47">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'compression' MUST mention a
+						&lt;premis:eventDetail&gt; element specifying the source and target
+						formats.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'compression' DOIT mentionner
+						un élément &lt;premis:eventDetail&gt; spécifiant les formats source et
+						cible.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='compression']">
+									<iso:assert test="premis:eventDetail"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.48">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'compression' or 'pageSplitting' MUST be of type 'software' for the PREMIS
+						linked agent of role 'performer', and 'organization' for the PREMIS linked
+						agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'compression' ou 'pageSplitting' DOIVENT être de type 'software' pour
+						l'agent PREMIS de rôle 'performer' et 'organization' pour l'agent PREMIS lié
+						de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='compression' or premis:eventType='pageSplitting']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.49">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be at most one &lt;digiprovMD&gt; containing a
+						&lt;premis:event&gt; of type 'colorProfile'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir au plus un élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'colorProfile'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='colorProfile'])&lt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.50">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'colorProfile' MUST mention at
+						least one PREMIS linked agent of role 'performer and at least one PREMIS
+						linked agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'colorProfile' DOIT mentionner
+						au moins un agent PREMIS lié de rôle 'performer' et au moins un agent PREMIS
+						lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='colorProfile']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.51">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'colorProfile' MUST be of type 'software' and 'hardware' for the PREMIS
+						linked agents of role 'performer, and 'organization' for the PREMIS linked
+						agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'colorProfile' DOIVENT être de type 'software' et 'hardware' pour les agents
+						PREMIS liés de rôle 'performer' et 'organization' pour l'agent PREMIS lié de
+						rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='colorProfile']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.52">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'qualityAssessment' MUST mention
+						at least one PREMIS linked agent of role 'implementer', one
+						&lt;premis:eventOutcome&gt; element and one
+						&lt;premis:eventOutcomeDetailNote&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'qualityAssessment' DOIT
+						mentionner au moins un agent PREMIS lié de rôle 'implementer', un élément
+						&lt;premis:eventOutcome&gt; et un élément
+						&lt;premis:eventOutcomeDetailNote&gt;..</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='qualityAssessment']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+									<iso:assert test="premis:eventOutcomeInformation/premis:eventOutcome"/>
+									<iso:assert test="premis:eventOutcomeInformation/premis:eventOutcomeDetail/premis:eventOutcomeDetailNote"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.53">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'qualityAssessment' MUST be of type 'software' for the PREMIS linked agent
+						of role 'performer, and 'organization' for the PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'qualityAssessment' DOIVENT être de type 'software' pour l'agent PREMIS lié
+						de rôle 'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='qualityAssessment']">
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.54">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be at most one &lt;digiprovMD&gt; containing a
+						&lt;premis:event&gt; of type 'groupDefinition'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir un et un seul élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'groupDefinition'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='groupDefinition'])&lt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.55">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;premis:event&gt; element of type 'groupDefinition'
+						MUST mention at least one PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;premis:event&gt; de type 'groupDefinition'
+						DOIT mentionner au moins un agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='groupDefinition']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.56">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS events of type 'userComment',
+						'producerComment' or 'digitizationRequests' MUST mention a
+						&lt;premis:eventDetail&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les événements PREMIS de type 'userComment',
+						'producerComment' ou 'digitizationRequests' DOIVENT mentionner un élément
+						&lt;premis:eventDetail&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='userComment' or premis:eventType='producerComment' or premis:eventType='digitizationRequests']">
+									<iso:assert test="premis:eventDetail"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.57">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS events of type 'ocrSegmentation',
+						'ocerization', 'ocrCorrection', 'olrSegmentation' and 'conversionToAlto'
+						MUST mention at least one PREMIS linked agent of role 'performer and at
+						least one PREMIS linked agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les événements PREMIS de type 'ocrSegmentation',
+						'ocerization', 'ocrCorrection', 'olrSegmentation' et 'conversionToAlto'
+						DOIVENT mentionner au moins un agent PREMIS lié de rôle 'performer' et au
+						moins un agent PREMIS lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ocrSegmentation' or premis:eventType='ocerization' or premis:eventType='ocrCorrection' or premis:eventType='olrSegmentation' or premis:eventType='conversionToAlto']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.58">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'ocrSegmentation', 'ocerization', 'ocrCorrection', 'olrSegmentation' and
+						'conversionToAlto' MUST be of type 'software' for the PREMIS linked agent of
+						role 'performer, and 'organization' for the PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'ocrSegmentation', 'ocerization', 'ocrCorrection', 'olrSegmentation' et
+						'conversionToAlto' DOIVENT être de type 'software' pour l'agent PREMIS de
+						rôle 'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ocrSegmentation' or premis:eventType='ocerization' or premis:eventType='ocrCorrection' or premis:eventType='olrSegmentation' or premis:eventType='conversionToAlto']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.59">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be at most one &lt;digiprovMD&gt; containing a
+						&lt;premis:event&gt; of type 'tocCreation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir au plus un élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'tocCreation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='tocCreation'])&lt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.60">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'tocCreation' MUST mention at
+						least one PREMIS linked agent of role 'performer and at least one PREMIS
+						linked agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'tocCreation' DOIT mentionner
+						au moins un agent PREMIS lié de rôle 'performer' et au moins un agent PREMIS
+						lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='tocCreation']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.61">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'tocCreation' MUST be of type 'software' for the PREMIS linked agent of role
+						'performer, and 'organization' for the PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'tocCreation' DOIVENT être de type 'software' pour l'agent PREMIS de rôle
+						'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='tocCreation']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.62">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be at most one &lt;digiprovMD&gt; containing a
+						&lt;premis:event&gt; of type 'ebookCreation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir au plus un élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'ebookCreation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ebookCreation'])&lt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.63">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'ebookCreation' MUST mention at
+						least one PREMIS linked agent of role 'performer and at least one PREMIS
+						linked agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'ebookCreation' DOIT
+						mentionner au moins un agent PREMIS lié de rôle 'performer' et au moins un
+						agent PREMIS lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ebookCreation']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.64">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'ebookCreation' MUST be of type 'software' for the PREMIS linked agent of
+						role 'performer, and 'organization' for the PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'ebookCreation' DOIVENT être de type 'software' pour l'agent PREMIS de rôle
+						'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ebookCreation']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.65">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be at most one &lt;digiprovMD&gt; containing a
+						&lt;premis:event&gt; of type 'adaptativeCreation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir au plus un élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'adaptativeCreation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='adaptativeCreation'])&lt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.66">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'adaptativeCreation' MUST
+						mention at least one PREMIS linked agent of role 'performer and at least one
+						PREMIS linked agent of role 'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'adaptativeCreation' DOIT
+						mentionner au moins un agent PREMIS lié de rôle 'performer' et au moins un
+						agent PREMIS lié de rôle 'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='adaptativeCreation']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='performer'])&gt;=1"/>
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='implementer'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.67">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS agents linked to a PREMIS event of type
+						'adaptativeCreation' MUST be of type 'software' for the PREMIS linked agent
+						of role 'performer, and 'organization' for the PREMIS linked agent of role
+						'implementer'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les agents PREMIS liés à un événement PREMIS de type
+						'adaptativeCreation' DOIVENT être de type 'software' pour l'agent PREMIS de
+						rôle 'performer' et 'organization' pour l'agent PREMIS lié de rôle
+						'implementer'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='adaptativeCreation']">
+									<iso:let name="UUIDPerformerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='performer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:let name="UUIDImplementerAgent" value="premis:linkingAgentIdentifier[premis:linkingAgentRole/text()='implementer']/premis:linkingAgentIdentifierValue/text()"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDPerformerAgent and premis:agentType='software'])&gt;=1"/>
+									<iso:assert test="count(//premis:agent[premis:agentIdentifier/premis:agentIdentifierValue = $UUIDImplementerAgent and premis:agentType='organization'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.68">
+				<description>
+					<xhtml:p xml:lang="en">There MUST be one and only one &lt;digiprovMD&gt;
+						containing a &lt;premis:event&gt; of type 'packageDelivery'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Il DOIT y avoir un et un seul élément &lt;digiprovMD&gt;
+						comprenant un &lt;premis:event&gt; de type 'packageDelivery'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec">
+									<iso:assert test="count(mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='packageDelivery'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.69">
+				<description>
+					<xhtml:p xml:lang="en">The PREMIS event of type 'packageDelivery' MUST mention a
+						PREMIS linked agent of role 'issuer', a PREMIS linked Object of type 'BTA'
+						or 'BCAT' and of role 'request' and a &lt;premis:eventDetail&gt; element
+						mentioning the service number and the delivery type.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'événement PREMIS de type 'packageDelivery' DOIT
+						mentionner un agent PREMIS lié de rôle 'issuer', un objet PREMIS lié de type
+						'BTA' ou 'BCAT' et de rôle 'request' et un élément
+						&lt;premis:eventDetail&gt; mentionnant le numéro de la prestation et le type
+						de livraison.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='packageDelivery']">
+									<iso:assert test="count(premis:linkingAgentIdentifier/premis:linkingAgentRole[text()='issuer'])=1"/>
+									<iso:assert test="premis:linkingObjectIdentifier[premis:linkingObjectRole='request']/premis:linkingObjectIdentifierType/text()='BTA' or premis:linkingObjectIdentifier[premis:linkingObjectRole='request']/premis:linkingObjectIdentifierType/text()='BCAT'"/>
+									<iso:assert test="matches(premis:eventDetail, '^Prestation\s[0-9]*\s:\slivraison initiale$') or matches(premis:eventDetail, '^Prestation\s[0-9]*\s:\sréfection courante$')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.70">
+				<description>
+					<xhtml:p xml:lang="en">In the PREMIS event of type 'packageDelivery', if the
+						&lt;premis:eventDetail&gt; element mentions 'livraison initiale', the
+						&lt;premis:eventDetail&gt; element MUST contain 'BTA' and if the
+						&lt;premis:eventDetail&gt; element mentions 'réfection courante', the
+						&lt;premis:eventDetail&gt; element MUST contain 'BCAT'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Dans l'événement PREMIS de type 'packageDelivery', si
+						l'élément &lt;premis:eventDetail&gt; mentionne 'livraison initiale',
+						l'élément &lt;premis:eventDetail&gt; DOIT contenir 'BTA' et si l'élément
+						&lt;premis:eventDetail&gt; mentionne 'réfection courante', l'élément
+						&lt;premis:eventDetail&gt; DOIT contenir 'BCAT'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='packageDelivery']/premis:eventDetail">
+									<iso:assert test="substring-after(.[../premis:linkingObjectIdentifier/premis:linkingObjectIdentifierType = 'BTA'], ': ') = 'livraison initiale' or substring-after(.[../premis:linkingObjectIdentifier/premis:linkingObjectIdentifierType = 'BCAT'], ': ') = 'réfection courante'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</amdSec>
+		<fileSec>
+			<requirement REQLEVEL="MUST" ID="RULE.71">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST contain
+						one &lt;fileSec&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil DOIT contenir un
+						élément &lt;fileSec&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:fileSec) =1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.72">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;fileGrp&gt; element, if any, MUST be identified by
+						a distinct USE attribute.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le cas échéant, tout élément &lt;fileGrp&gt; DOIT
+						comprendre un attribut USE distinct.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec">
+									<iso:assert test="count(mets:fileGrp) = count(distinct-values(mets:fileGrp/@USE))"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.73">
+				<description>
+					<xhtml:p xml:lang="en">Each &lt;fileGrp&gt; element, if any, MUST be identified
+						by an ID attribute and the value of this attribute MUST begin with a 'GRP.'
+						character string.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le cas échéant, tout élément &lt;fileGrp&gt; DOIT être
+						identifié par un attribut ID, et la valeur de cet attribut DOIT commencer
+						par la chaîne de caractères 'GRP.'</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+									<iso:assert test="@ID"/>
+									<iso:assert test="starts-with(@ID, 'GRP.')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.74">
+				<description>
+					<xhtml:p xml:lang="en">Each &lt;file&gt; element, if any, MUST be identified by
+						an ID attribute and the value of this attribute MUST begin with the USE of
+						the &lt;fileGrp&gt; it belongs to.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le cas échéant, tout élément &lt;file&gt; DOIT être
+						identifié par un attribut ID, et la valeur de cet attribut DOIT commencer
+						par le USE du &lt;fileGrp&gt; auquel il appartient.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+									<iso:let name="use" value="ancestor::mets:fileGrp[1]/@USE"/>
+									<iso:assert test="starts-with(@ID,$use)"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.75">
+				<description>
+					<xhtml:p xml:lang="en">Each &lt;file&gt; element, if any, MUST have its own
+						checksum expressed in the CHECKSUM attribute with a CHECKSUMTYPE attribute
+						value of 'MD5'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout élément &lt;file&gt; DOIT avoir une empreinte
+						exprimée dans l'attribut CHECKSUM associé à un attribut CHECKSUMTYPE
+						contenant la valeur 'MD5'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+									<iso:assert test="@CHECKSUM"/>
+									<iso:assert test="@CHECKSUMTYPE = 'MD5'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.76">
+				<description>
+					<xhtml:p xml:lang="en">The value of each CHECKSUM attribute MUST be a 32
+						characters long string.</xhtml:p>
+					<xhtml:p xml:lang="fr">La valeur de tout attribut CHECKSUM DOIT être une chaîne
+						de 32 caractères.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@CHECKSUM">
+									<iso:assert test="string-length(.) = 32"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.77">
+				<description>
+					<xhtml:p xml:lang="en">Each file in the &lt;fileSec&gt;, if any, MUST be
+						referred to in an &lt;FLocat&gt; element with a 'URL' location type of
+						xlink:type 'simple', with its relative path in the Information Package given
+						as the value of an "xlink:href" attribute.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le cas échéant, tout fichier de la section
+						&lt;fileSec&gt; DOIT être référencé dans un élément &lt;FLocat&gt; avec
+						'URL' comme type d'emplacement de type 'simple', son chemin relatif au sein
+						du Paquet d'Informations étant donné en valeur d'un attribut
+						'xlink:href'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+									<iso:assert test="mets:FLocat/@LOCTYPE='URL'"/>
+									<iso:assert test="mets:FLocat/@xlink:type='simple'"/>
+									<iso:assert test="mets:FLocat/@xlink:href"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</fileSec>
+		<structMap>
+			<requirement REQLEVEL="MUST" ID="RULE.78">
+				<description>
+					<xhtml:p xml:lang="en">All &lt;structMap&gt; elements MUST contain a distinct
+						TYPE attribute.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout élément &lt;structMap&gt; DOIT comprendre un
+						attribut TYPE distinct.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:structMap) = count(distinct-values(mets:structMap/@TYPE))"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.79">
+				<description>
+					<xhtml:p xml:lang="en">Every &lt;div&gt; element MUST be identified by an ID
+						attribute and its value MUST start with a 'DIV.' character string.</xhtml:p>
+					<xhtml:p xml:lang="fr">Tout élément &lt;div&gt; DOIT être identifié par un
+						attribut ID, dont la valeur DOIT commencer par la chaîne de caractères
+						'DIV.'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div">
+									<iso:assert test="@ID"/>
+									<iso:assert test="starts-with(@ID, 'DIV.')"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.80">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;structMap&gt; 'TYPE' attribute MUST contain one
+						of the following values : 'physical', 'toc', 'attachment',
+						'ebook'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'attribut 'TYPE' de l'élément &lt;structMap&gt; DOIT
+						avoir l'une des valeurs suivantes : 'physical', 'toc', 'attachment',
+						'ebook'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap">
+									<iso:assert test="@TYPE = 'physical' or @TYPE =  'toc' or @TYPE = 'attachment' or @TYPE = 'ebook'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.81">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;mets&gt; root element MUST contain one and only
+						one &lt;structMap&gt; element with a TYPE="physical". It MAY contain other
+						&lt;structMap&gt; elements, but the value of their own TYPE attribute MUST
+						be different from 'physical'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'élément racine &lt;mets&gt; DOIT contenir un et un seul
+						élément &lt;structMap&gt; de TYPE="physical". Il PEUT comprendre d'autres
+						éléments &lt;structMap&gt; mais la valeur de l'attribut TYPE DOIT être
+						différente de 'physical'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:structMap[@TYPE='physical'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.82">
+				<description>
+					<xhtml:p xml:lang="en">Every structural map MUST contain at least three
+						&lt;div&gt;levels with the following hierarchy, from the broader to the
+						narrower: mets:div/@TYPE="set", mets:div/@TYPE="group",
+						mets:div/@TYPE="object".</xhtml:p>
+					<xhtml:p xml:lang="fr">Toute carte de structure DOIT contenir au moins trois
+						niveaux de &lt;div&gt; imbriqués selon la hiérarchie suivante, du plus
+						global au plus précis : mets:div/@TYPE="set", mets:div/@TYPE="group",
+						mets:div/@TYPE="object".</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap">
+									<iso:assert test=".//mets:div[@TYPE='set']/mets:div[@TYPE='group']/mets:div[@TYPE='object']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.83">
+				<description>
+					<xhtml:p xml:lang="en">In a structural map, every &lt;div&gt; with TYPE='object'
+						MUST reference at least one file with a child &lt;fptr&gt;
+						element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Dans une carte de structure, tout élément &lt;div&gt; de
+						TYPE='object' DOIT faire référence à au moins un fichier par le biais d'un
+						élement fils &lt;fptr&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='object']">
+									<iso:assert test="mets:fptr"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.84">
+				<description>
+					<xhtml:p xml:lang="en">In a physical structural map, a &lt;div&gt; with
+						TYPE='group' references the Data Object contained in the Information
+						Package, for instance a monograph, a fasicule of a periodical, a still
+						image, a grouping of still images or a volume of a multivolume
+						monograph.</xhtml:p>
+					<xhtml:p xml:lang="en">Therefore, a physical structural map MUST contain one and
+						only one &lt;div&gt; element with TYPE='group'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Dans une carte de structure physique, un élément
+						&lt;div&gt; de type "group" correspond à l'Objet numérique compris dans le
+						Paquet d'informations, par exemple, une monographie, un fascicule de
+						périodique, une image, un lot d'images ou un volume d'une monographie en
+						plusieurs volumes.</xhtml:p>
+					<xhtml:p xml:lang="fr">Aussi, une carte de structure physique DOIT donc contenir
+						un et un seul élément &lt;div&gt; de TYPE='group'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']">
+									<iso:assert test="count(.//mets:div[@TYPE='set']/mets:div[@TYPE='group'])=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.85">
+				<description>
+					<xhtml:p xml:lang="en">In a physical structural map, a &lt;div&gt; with
+						TYPE='object' references a part of the Digital Object contained in the
+						Information Package, for instance a single image in a grouping of images or
+						a page in a text document.</xhtml:p>
+					<xhtml:p xml:lang="en">Therefore, the physical structural map MUST contain at
+						least one &lt;div&gt; element with TYPE='object'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;div&gt; de TYPE='object' correspond à un
+						élément de l'Objet numérique, par exemple une image d'un lot ou une page
+						d'un document textuel.</xhtml:p>
+					<xhtml:p xml:lang="fr">Une carte de structure physique DOIT donc contenir au
+						moins un élément &lt;div&gt; de TYPE='object'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']">
+									<iso:assert test="count(.//mets:div[@TYPE='set']/mets:div[@TYPE='group']/mets:div[@TYPE='object'])&gt;=1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.86">
+				<description>
+					<xhtml:p xml:lang="en">In every structMap, all &lt;div&gt; elements with
+						TYPE='object' MUST contain an ORDER attribute, expressing the physical order
+						of these elements (for instance, the order of the pages in a text
+						document).</xhtml:p>
+					<xhtml:p xml:lang="fr">Dans toute carte de structure, les éléments &lt;div&gt;
+						de type "object" DOIVENT tous contenir un attribut ORDER, qui expriment
+						l'ordre physique de ces éléments (par exemple, l'ordre des pages d'un
+						document textuel).</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='object']">
+									<iso:assert test="@ORDER"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.87">
+				<description>
+					<xhtml:p xml:lang="en">The ORDER attribute of the first &lt;div&gt; elements
+						with type 'object' in every structural map MUST have the value
+						'1'.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'attribut ORDER du premier élément &lt;div&gt; de type
+						"object" de chaque carte de structure DOIT avoir la valeur '1'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='object'][1]">
+									<iso:assert test="@ORDER = '1'"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.88">
+				<description>
+					<xhtml:p xml:lang="en">The ORDER attribute of the &lt;div&gt; elements with type
+						'object' in every structural map MUST be a number incremented by
+						1.</xhtml:p>
+					<xhtml:p xml:lang="fr">L'attribut ORDER des éléments &lt;div&gt; de type
+						"object" de chaque carte de structure DOIT être incrémenté de 1.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='object' and not(@ORDER='1')]">
+									<iso:assert test="@ORDER = preceding-sibling::mets:div[@TYPE='object'][1]/@ORDER + 1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.89">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;div&gt; elements of type 'set' containing a
+						&lt;div&gt; element of type 'group' MUST have the same attribute 'ADMID' in
+						every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr"> Les éléments &lt;div&gt; de type 'set' contenant un
+						élément &lt;div&gt; de type 'group' DOIVENT avoir le même attribut 'ADMID'
+						dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='set' and mets:div[@TYPE='group']]/@ADMID">
+									<iso:let name="set1ADMID" value="/mets:mets/mets:structMap[1]//mets:div[@TYPE='set' and mets:div[@TYPE='group']]/@ADMID"/>
+									<iso:assert test=". = $set1ADMID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.90">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;div&gt; elements of type 'set' containing a
+						&lt;div&gt; element of type 'group' MUST have the same attribute 'DMDID' in
+						every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr"> Les éléments &lt;div&gt; de type 'set' contenant un
+						élément &lt;div&gt; de type 'group' DOIVENT avoir le même attribut 'DMDID'
+						dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='set' and mets:div[@TYPE='group']]/@DMDID">
+									<iso:let name="set1DMDID" value="/mets:mets/mets:structMap[1]//mets:div[@TYPE='set' and mets:div[@TYPE='group']]/@DMDID"/>
+									<iso:assert test=". = $set1DMDID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.91">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;div&gt; elements of type 'group' MUST have the
+						same attribute 'ADMID' in every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr"> Les éléments &lt;div&gt; de type 'group' DOIVENT avoir
+						le même attribut 'ADMID' dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='group']/@ADMID">
+									<iso:let name="groupADMID" value="/mets:mets/mets:structMap[1]//mets:div[@TYPE='group']/@ADMID"/>
+									<iso:assert test=".= $groupADMID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.92">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;div&gt; elements of type 'group' MUST have the
+						same attribute 'DMDID' in every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr"> Les éléments &lt;div&gt; de type 'group' DOIVENT avoir
+						le même attribut 'DMDID' dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='group']/@DMDID">
+									<iso:let name="groupDMDID" value="/mets:mets/mets:structMap[1]//mets:div[@TYPE='group']/@DMDID"/>
+									<iso:assert test=". = $groupDMDID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.93">
+				<description>
+					<xhtml:p xml:lang="en">If used, the &lt;div&gt; elements of type 'set'
+						containing another &lt;div&gt; element of type 'set' MUST have the same
+						attribute 'ADMID' in every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr">S'ils sont utilisés, les éléments &lt;div&gt; de type
+						'set' contenant un autre élément &lt;div&gt; de type 'set' DOIVENT avoir le
+						même attribut 'ADMID' dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap/mets:div[@TYPE='set' and mets:div[@TYPE='set']]/@ADMID">
+									<iso:let name="set2ADMID" value="/mets:mets/mets:structMap[1]/mets:div[@TYPE='set' and mets:div[@TYPE='set']]/@ADMID"/>
+									<iso:assert test=". = $set2ADMID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.94">
+				<description>
+					<xhtml:p xml:lang="en">If used, the &lt;div&gt; elements of type 'set'
+						containing another &lt;div&gt; element of type 'set' MUST have the same
+						attribute 'DMDID' in every structMap.</xhtml:p>
+					<xhtml:p xml:lang="fr">S'ils sont utilisés, les éléments &lt;div&gt; de type
+						'set' contenant un autre élément &lt;div&gt; de type 'set' DOIVENT avoir le
+						même attribut 'DMDID' dans toutes les cartes de structure.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap/mets:div[@TYPE='set' and mets:div[@TYPE='set']]/@DMDID">
+									<iso:let name="set2DMDID" value="/mets:mets/mets:structMap[1]/mets:div[@TYPE='set' and mets:div[@TYPE='set']]/@DMDID"/>
+									<iso:assert test=". = $set2DMDID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.95">
+				<description>
+					<xhtml:p xml:lang="en">A digital object of type 'periodical' or 'multivolume
+						monograph' MUST contain an attribute 'DMDID' in its &lt;div&gt; element of
+						type 'set'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un objet numérique de type 'periodical' ou 'multivolume
+						monograph' DOIT contenir un attribut 'DMDID' dans son élément &lt;div&gt; de
+						type 'set'.</xhtml:p>
+					<xhtml:p xml:lang="en">A digital object of type 'still images' or 'monograph'
+						MUST NOT contain an attribute 'DMDID' in its &lt;div&gt; element of type
+						'set'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un objet numérique de type 'still images' ou 'monograph'
+						NE DOIT PAS contenir un attribut 'DMDID' dans son élément &lt;div&gt; de
+						type 'set'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap//mets:div[@TYPE='set' and mets:div[@TYPE='group']]">
+									<iso:let name="PeriodicalOrMPV" value="boolean(/mets:mets/mets:dmdSec/mets:mdWrap/mets:xmlData/spar_dc:spar_dc[dc:type/text()='periodical' or dc:type/text()='multivolume monograph'])"/>
+									<iso:assert test="boolean(@DMDID) = $PeriodicalOrMPV"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</structMap>
+		<structLink>
+			<requirement REQLEVEL="MUST NOT" ID="RULE.96">
+				<description>
+					<xhtml:p xml:lang="en">A METS file conforming to this profile MUST NOT contain a
+						&lt;structLink&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil NE DOIT PAS contenir
+						d'élément &lt;structLink&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:structLink)=0"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</structLink>
+		<behaviorSec>
+			<requirement REQLEVEL="MUST NOT" ID="RULE.97">
+				<description>
+					<xhtml:p xml:lang="en">A METS XML file conforming to this profile MUST NOT
+						contain a &lt;behaviorSec&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un fichier METS conforme à ce profil NE DOIT PAS contenir
+						d'élément &lt;behaviorSec&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:behaviorSec)=0"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</behaviorSec>
+		<multiSection>
+			<requirement REQLEVEL="MUST" ID="RULE.98">
+				<description>
+					<xhtml:p xml:lang="en">The total number of pointers in all structural maps MUST
+						at least equal the number of files referenced by the
+						&lt;fileSec&gt;.</xhtml:p>
+					<xhtml:p xml:lang="fr">Le nombre de pointeurs dans toutes les cartes de
+						structure DOIT être au moins égal au nombre de fichiers définis dans la
+						section des fichiers.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets">
+									<iso:assert test="count(mets:fileSec/mets:fileGrp/mets:file) &lt;= count(mets:structMap//mets:fptr)"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.99">
+				<description>
+					<xhtml:p xml:lang="en">The date and time mentioned in the LASTMODDATE attribute
+						of the &lt;metsHdr&gt; element MUST be equal or newer than all PREMIS events
+						date and time.</xhtml:p>
+					<xhtml:p xml:lang="fr">La date et l'heure mentionnées dans l'attibut LASTMODDATE
+						de l'élément &lt;metsHdr&gt; DOIVENT être égales ou postérieures à la date
+						et l'heure de tous les événements PREMIS.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event/premis:eventDateTime">
+									<iso:assert test=". &lt;= /mets:mets/mets:metsHdr/@LASTMODDATE"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.100">
+				<description>
+					<xhtml:p xml:lang="en">Files referenced in &lt;fptr&gt; elements contained in a
+						structMap of type 'physical' MUST pertain to file groups of 'USE' 'master'
+						or 'ocr'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les fichiers référencés dans des éléments &lt;fptr&gt;
+						contenus dans une structMap de type 'physical' DOIVENT appartenir aux
+						groupes de fichiers de 'USE' 'master' ou 'ocr'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']//mets:div[@TYPE='object']/mets:fptr">
+									<iso:assert test="@FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='master']/mets:file/@ID or @FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='ocr']/mets:file/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.101">
+				<description>
+					<xhtml:p xml:lang="en">Files referenced in &lt;fptr&gt; elements contained in a
+						structMap of type 'attachment' MUST pertain to file groups of 'USE'
+						'colorProfile'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les fichiers référencés dans des éléments &lt;fptr&gt;
+						contenus dans une structMap de type 'attachment' DOIVENT appartenir aux
+						groupes de fichiers de 'USE' 'colorProfile'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='attachment']//mets:div[@TYPE='object']/mets:fptr">
+									<iso:assert test="@FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='colorProfile']/mets:file/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.102">
+				<description>
+					<xhtml:p xml:lang="en">Files referenced in &lt;fptr&gt; elements contained in a
+						structMap of type 'toc' MUST pertain to file groups of 'USE'
+						'toc'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les fichiers référencés dans des éléments &lt;fptr&gt;
+						contenus dans une structMap de type 'toc' DOIVENT appartenir aux groupes de
+						fichiers de 'USE' 'toc'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='toc']//mets:div[@TYPE='object']/mets:fptr">
+									<iso:assert test="@FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='toc']/mets:file/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.103">
+				<description>
+					<xhtml:p xml:lang="en">Files referenced in &lt;fptr&gt; elements contained in a
+						structMap of type 'ebook' MUST pertain to file groups of 'USE' 'epub' or
+						'adaptative'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les fichiers référencés dans des éléments &lt;fptr&gt;
+						contenus dans une structMap de type 'ebook' DOIVENT appartenir aux groupes
+						de fichiers de 'USE' 'epub' ou 'adaptative'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='ebook']//mets:div[@TYPE='object']/mets:fptr">
+									<iso:assert test="@FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='epub']/mets:file/@ID or @FILEID = /mets:mets/mets:fileSec/mets:fileGrp[@USE='adaptative']/mets:file/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.104">
+				<description>
+					<xhtml:p xml:lang="en">Each file contained in the &lt;fileGrp&gt; element of USE
+						'master' MUST be linked to one and only one &lt;sourceMD&gt;
+						element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque fichier contenu dans l'élément &lt;fileGrp&gt; de
+						USE 'master' DOIT être lié à un et un seul élément
+						&lt;sourceMD&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='master']/mets:file">
+									<iso:let name="fileADMID" value="tokenize(string(@ADMID), ' ')"/>
+									<iso:assert test="count(/mets:mets/mets:amdSec/mets:sourceMD[@ID=$fileADMID])= 1"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.105">
+				<description>
+					<xhtml:p xml:lang="en">Every &lt;file&gt; element contained in a &lt;fileGrp&gt;
+						element of USE 'master' MUST refer to a &lt;digiprovMD&gt; element
+						containing a PREMIS event of type 'digitization'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque élément &lt;file&gt; contenu dans un élément
+						&lt;fileGrp&gt; de USE 'master' DOIT être lié à un élément
+						&lt;digiprovMD&gt; contenant un événement PREMIS de type 'digitization'
+						.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='master']/mets:file">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='digitization']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.106">
+				<description>
+					<xhtml:p xml:lang="en">Every &lt;file&gt; element contained in a &lt;fileGrp&gt;
+						element of USE 'colorProfile' MUST refer to a &lt;digiprovMD&gt; element
+						containing a PREMIS event of type 'colorProfile'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque élément &lt;file&gt; contenu dans un élément
+						&lt;fileGrp&gt; de USE 'colorProfile' DOIT être lié à un élément
+						&lt;digiprovMD&gt; contenant un événement PREMIS de type 'colorProfile'
+						.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='colorProfile']/mets:file">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='colorProfile']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.107">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing a PREMIS event of
+						type 'qualityAssessment' MUST be referred to from a &lt;file&gt; element
+						inside a &lt;fileGrp&gt; element of USE 'ocr', 'toc', 'epub' or
+						'adaptative'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un événement
+						PREMIS de type 'qualityAssessment' DOIT être lié à un élément &lt;file&gt;
+						dans un élément &lt;fileGrp&gt; de USE 'ocr', 'toc', 'epub' ou
+						'adaptative'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event[premis:eventType='qualityAssessment']]">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='ocr' or @USE='toc' or @USE='epub' or @USE='adaptative']/mets:file[tokenize(string(@ADMID), ' ') = $ID]"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.108">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing a PREMIS event of
+						type 'groupDefinition' MUST be referred to from a &lt;div&gt; element of
+						type 'group'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un événement
+						PREMIS de type 'groupDefinition' DOIT être lié à un élément &lt;div&gt; de
+						type 'group'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event[premis:eventType='groupDefinition']]">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="/mets:mets/mets:structMap//mets:div[@TYPE='group'][tokenize(string(@ADMID), ' ') = $ID]"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.109">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing a PREMIS event of
+						type 'userComment', 'producerComment' or 'digitizationRequests' MUST be
+						referred to from a &lt;div&gt; element of type 'group' or
+						'object'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un événement
+						PREMIS de type 'userComment', 'producerComment' ou 'digitizationRequests'
+						DOIT être lié à un élément &lt;div&gt; de type 'group' ou
+						'object'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event[premis:eventType='userComment' or premis:eventType='producerComment' or premis:eventType='digitizationRequests']]">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="/mets:mets/mets:structMap//mets:div[@TYPE= 'object' or @TYPE='group'][tokenize(string(@ADMID), ' ') = $ID]"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.110">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing a PREMIS event of
+						type 'ocrSegmentation', 'ocerization', 'ocrCorrection', and
+						'conversionToAlto' MUST be referred to from &lt;file&gt; elements contained
+						in the &lt;fileGrp&gt; of USE 'ocr'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un événement
+						PREMIS de type 'ocrSegmentation', 'ocerization', 'ocrCorrection', ou
+						'conversionToAlto' DOIT être lié aux éléments &lt;file&gt; contenus dans le
+						&lt;fileGrp&gt; de USE 'ocr'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ocrSegmentation' or premis:eventType='ocerization' or premis:eventType='ocrCorrection' or premis:eventType='conversionToAlto']]">
+									<iso:let name="ID" value="@ID"/>
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE= 'ocr']/mets:file[tokenize(string(@ADMID), ' ') = $ID]"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.111">
+				<description>
+					<xhtml:p xml:lang="en">Each file contained in a &lt;fileGrp&gt; element of USE
+						'toc' MUST be linked to a PREMIS event of type 'tocCreation' or
+						'olrSegmentation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque fichier contenu dans un élément &lt;fileGrp&gt; de
+						USE 'toc' DOIT être lié à un événement PREMIS de type 'tocCreation' ou
+						'olrSegmentation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='toc']/mets:file">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='tocCreation' or mets:mdWrap/mets:xmlData/premis:event/premis:eventType='olrSegmentation']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.112">
+				<description>
+					<xhtml:p xml:lang="en">Each file contained in a &lt;fileGrp&gt; element of USE
+						'epub' MUST be linked to a PREMIS event of type 'ebookCreation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque fichier contenu dans un élément &lt;fileGrp&gt; de
+						USE 'epub' DOIT être lié à un événement PREMIS de type
+						'ebookCreation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='epub']/mets:file">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='ebookCreation']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.113">
+				<description>
+					<xhtml:p xml:lang="en">Each file contained in a &lt;fileGrp&gt; element of USE
+						'adaptative' MUST be linked to a PREMIS event of type
+						'adaptativeCreation'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque fichier contenu dans un élément &lt;fileGrp&gt; de
+						USE 'adaptative' DOIT être lié à un événement PREMIS de type
+						'adaptativeCreation'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp[@USE='adaptative']/mets:file">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='adaptativeCreation']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.114">
+				<description>
+					<xhtml:p xml:lang="en">A &lt;digiprovMD&gt; element containing a PREMIS event of
+						type 'packageDelivery' MUST be referred to from a &lt;div&gt; element of
+						type 'group'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Un élément &lt;digiprovMD&gt; contenant un événement
+						PREMIS de type 'packageDelivery' DOIT être lié à un élément &lt;div&gt; de
+						type 'group'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']//mets:div[@TYPE='group']">
+									<iso:assert test="tokenize(string(@ADMID), ' ') = /mets:mets/mets:amdSec/mets:digiprovMD[mets:mdWrap/mets:xmlData/premis:event/premis:eventType='packageDelivery']/@ID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.115">
+				<description>
+					<xhtml:p xml:lang="en">The &lt;fileGrp&gt; elements MUST be referred in PREMIS
+						elements &lt;premis:linkingObjectIdentifier&gt; of role 'outcome' contained
+						in the PREMIS event of type 'packageDelivery'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les éléments &lt;fileGrp&gt; DOIVENT être mentionnés dans
+						des éléments PREMIS &lt;premis:linkingObjectIdentifier&gt; de rôle 'outcome'
+						contenus dans l'événement PREMIS de type 'packageDelivery'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/@USE">
+									<iso:assert test=". = /mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='packageDelivery']/premis:linkingObjectIdentifier[premis:linkingObjectRole='outcome']/premis:linkingObjectIdentifierValue/text()"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.116">
+				<description>
+					<xhtml:p xml:lang="en">Every PREMIS element
+						&lt;premis:linkingObjectIdentifier&gt; of role 'outcome' mentioned in the
+						PREMIS event of type 'packageDelivery' MUST correspond to a &lt;fileGrp&gt;
+						element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Chaque élément PREMIS
+						&lt;premis:linkingObjectIdentifier&gt; de rôle 'outcome' mentionné dans un
+						événement PREMIS event de type 'packageDelivery' DOIT correspondre à un
+						élément &lt;fileGrp&gt;.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='packageDelivery']/premis:linkingObjectIdentifier[premis:linkingObjectRole='outcome']/premis:linkingObjectIdentifierValue">
+									<iso:assert test="text() = /mets:mets/mets:fileSec/mets:fileGrp/@USE"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.117">
+				<description>
+					<xhtml:p xml:lang="en">If the value of the ORDERLABEL attribute of a &lt;div&gt;
+						element of TYPE 'object' contained in a &lt;structMap&gt; element of TYPE
+						'physical' is not 'NP', said &lt;div&gt; element MUST refer to a
+						&lt;dmdSec&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si la valeur de l'attribut ORDERLABEL d'un élément
+						&lt;div&gt; de TYPE 'object' contenu dans un élément &lt;structMap&gt; de
+						TYPE 'physical' n'est pas 'NP', cet élément &lt;div&gt; DOIT être lié à un
+						élément &lt;dmdSec&gt; .</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']//mets:div[@TYPE='object'][not(@ORDERLABEL='NP')]">
+									<iso:assert test="@DMDID"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.118">
+				<description>
+					<xhtml:p xml:lang="en">If the type of the &lt;dc:title&gt; element inside a
+						&lt;dmdSec&gt; element linked to a &lt;div&gt; element of TYPE 'object'
+						inside a &lt;structMap&gt; element of TYPE 'physical' is
+						'spar_dc:paginationA', 'spar_dc:paginationX' or 'spar_dc:paginationF', the
+						value of the ORDERLABEL attribute of said &lt;div&gt; element MUST be
+						identical to the content of said &lt;dc:title&gt; element.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si le type de l'élément &lt;dc:title&gt; contenu dans un
+						élément &lt;dmdSec&gt; lié à un élement &lt;div&gt; de TYPE 'object' contenu
+						dans un élément &lt;structMap&gt; de TYPE 'physical' est
+						'spar_dc:paginationA', 'spar_dc:paginationX' ou 'spar_dc:paginationF' la
+						valeur de l'attribut ORDERLABEL de cet élément &lt;div&gt; DOIT être
+						identique au contenu de l'élément &lt;dc:title&gt; mentionné.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:structMap[@TYPE='physical']//mets:div[@TYPE='object'][tokenize(string(@DMDID), ' ') = /mets:mets/mets:dmdSec[mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:title[@xsi:type='spar_dc:paginationA' or @xsi:type='spar_dc:paginationF' or @xsi:type='spar_dc:paginationX']]/@ID]">
+									<iso:let name="divDMDID" value="@DMDID"/>
+									<iso:assert test="@ORDERLABEL = /mets:mets/mets:dmdSec[@ID=$divDMDID]/mets:mdWrap/mets:xmlData/spar_dc:spar_dc/dc:title[@xsi:type='spar_dc:paginationA' or @xsi:type='spar_dc:paginationF' or @xsi:type='spar_dc:paginationX']/text()"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.119">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'digitization' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'master' and a
+						&lt;structMap&gt; element of TYPE 'physical'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'digitization' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'master' et un
+						élément &lt;structMap&gt; de TYPE 'physical'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='digitization']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='master']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='physical']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.120">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'ocerization' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'ocr' and a &lt;structMap&gt;
+						element of TYPE 'physical'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'ocerization' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'ocr' et un
+						élément &lt;structMap&gt; de TYPE 'physical'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ocerization']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='ocr']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='physical']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.121">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'tocCreation' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'toc' and a &lt;structMap&gt;
+						element of TYPE 'toc'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'tocCreation' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'toc' et un
+						élément &lt;structMap&gt; de TYPE 'toc'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='tocCreation']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='toc']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='toc']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.122">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'olrSegmentation' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'toc' and a &lt;structMap&gt;
+						element of TYPE 'toc'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'olrSegmentation' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'toc' et un
+						élément &lt;structMap&gt; de TYPE 'toc'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='olrSegmentation']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='toc']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='toc']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.123">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'colorProfile' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'colorProfile' and a
+						&lt;structMap&gt; element of TYPE 'colorProfile'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'colorProfile' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'colorProfile'
+						et un élément &lt;structMap&gt; de TYPE 'attachment'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='colorProfile']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='colorProfile']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='attachment']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.124">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'ebookCreation' is mentioned,
+						there MUST be a &lt;fileGrp&gt; element of USE 'epub' and a
+						&lt;structMap&gt; element of TYPE 'ebook'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'ebookCreation' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'epub' et un
+						élément &lt;structMap&gt; de TYPE 'ebook'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='ebookCreation']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='epub']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='ebook']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+			<requirement REQLEVEL="MUST" ID="RULE.125">
+				<description>
+					<xhtml:p xml:lang="en">If a PREMIS Event of type 'adaptativeCreation' is
+						mentioned, there MUST be a &lt;fileGrp&gt; element of USE 'adaptative' and a
+						&lt;structMap&gt; element of TYPE 'ebook'.</xhtml:p>
+					<xhtml:p xml:lang="fr">Si un événement PREMIS de type 'adaptativeCreation' est
+						mentionné, il DOIT y avoir un élément &lt;fileGrp&gt; de USE 'adaptative' et
+						un élément &lt;structMap&gt; de TYPE 'ebook'.</xhtml:p>
+				</description>
+				<tests>
+					<test TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+						<testWrap>
+							<testXML>
+								<iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdWrap/mets:xmlData/premis:event[premis:eventType='adaptativeCreation']">
+									<iso:assert test="/mets:mets/mets:fileSec/mets:fileGrp[@USE='adaptative']"/>
+									<iso:assert test="/mets:mets/mets:structMap[@TYPE='ebook']"/>
+								</iso:rule>
+							</testXML>
+						</testWrap>
+					</test>
+				</tests>
+			</requirement>
+		</multiSection>
+	</structural_requirements>
+	<technical_requirements>
+		<content_files>
+			<requirement>
+				<description>
+					<xhtml:p xml:lang="en">The allowed file formats in the fileSec depend on the
+						service level agreement the Archive has agreed with the Producer. Therefore,
+						such requirements are out of the scope of this generic METS profile and will
+						be precised in specific METS profiles.</xhtml:p>
+					<xhtml:p xml:lang="fr">Les formats de fichiers autorisés dans la fileSec
+						dépendent de l'accord de qualité de service qui a été négocié avec le
+						Producteur. Ces exigences sont donc hors du périmètre de ce profil METS
+						générique et seront précisées dans les profils METS spécifiques.</xhtml:p>
+				</description>
+			</requirement>
+		</content_files>
+	</technical_requirements>
+	<tool>
+		<description>
+			<xhtml:p xml:lang="en"/>
+			<xhtml:p xml:lang="fr"/>
+		</description>
+	</tool>
+	<Appendix NUMBER="1" LABEL="METS Sample" ID="APPENDIX.1">
+		<mets xmlns="http://www.loc.gov/METS/">
+			<metsHdr ID="HDR.1" CREATEDATE="2013-03-05T17:52:16+01:00" LASTMODDATE="2015-03-18T17:51:35+01:00">
+				<altRecordID TYPE="producerIdentifier">NUM</altRecordID>
+				<altRecordID TYPE="productionIdentifier">5529629</altRecordID>
+			</metsHdr>
+			<dmdSec ID="DMD.1">
+				<mdWrap MDTYPE="DC" MIMETYPE="text/xml">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title>Journal militaire ["puis" Journal militaire officiel].
+								Contenant... les ordonnances... les nominations... l'annonce ou
+								extrait des ouvrages...</dc:title>
+							<dc:type>periodical</dc:type>
+							<dc:creator>France. Secrétariat d'Etat à la guerre
+								(15..-1791)</dc:creator>
+							<dc:creator>France. Ministère de la guerre (1791-1936)</dc:creator>
+							<dc:creator>France. Ministère de la guerre (1791-1936)</dc:creator>
+							<dc:publisher>[s.n.?] (Paris)</dc:publisher>
+							<dc:relation xsi:type="spar_dc:ark">ark:/12148/cb328016138</dc:relation>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.2">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title>1885-11-25 (Numéro 82)</dc:title>
+							<dc:creator>France. Secrétariat d'Etat à la guerre
+								(15..-1791)</dc:creator>
+							<dc:creator>France. Ministère de la guerre (1791-1936)</dc:creator>
+							<dc:creator>France. Ministère de la guerre (1791-1936)</dc:creator>
+							<dc:description xsi:type="spar_dc:sequentialDesignation1">Numéro
+								82</dc:description>
+							<dc:publisher>[s.n.?] (Paris)</dc:publisher>
+							<dc:date>1885-11-25</dc:date>
+							<dc:type>periodical</dc:type>
+							<dcterms:provenance>BnF</dcterms:provenance>
+							<dc:language xsi:type="dcterms:ISO639-3">fre</dc:language>
+							<dc:relation xsi:type="spar_dc:ark">ark:/12148/cb328016138</dc:relation>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.3">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">121</dc:title>
+							<dc:description>cover</dc:description>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.4">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">122</dc:title>
+							<dc:description>binding</dc:description>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.5">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">123</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.6">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">124</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.7">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">125</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.8">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">126</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.9">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">127</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.10">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">128</dc:title>
+							<dc:description>illustration</dc:description>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.11">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">129</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.12">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">130</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.13">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">131</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.14">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">132</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.15">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">133</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.16">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">134</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.17">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">135</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<dmdSec ID="DMD.18">
+				<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+					<xmlData>
+						<spar_dc:spar_dc>
+							<dc:title xsi:type="spar_dc:paginationA">136</dc:title>
+						</spar_dc:spar_dc>
+					</xmlData>
+				</mdWrap>
+			</dmdSec>
+			<amdSec>
+				<sourceMD ID="AMD.1">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="DC">
+						<xmlData>
+							<spar_dc:spar_dc>
+								<dc:description xml:lang="fr">Microfilm 35 mm en noir et blanc
+									négatif</dc:description>
+								<dc:identifier xsi:type="spar_dc:barCode">37511005888519/9/51</dc:identifier>
+								<dc:identifier xsi:type="spar_dc:originalObjectCallNumber">8-LC5-23</dc:identifier>
+								<dc:identifier xsi:type="spar_dc:reproducedObjectCallNumber">MFILM
+									8-LC5-23</dc:identifier>
+							</spar_dc:spar_dc>
+						</xmlData>
+					</mdWrap>
+				</sourceMD>
+				<digiprovMD ID="AMD.2" ADMID="AMD.10 AMD.11 AMD.18">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>9b6ce1e0-b46c-11e5-a837-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>digitization</premis:eventType>
+								<premis:eventDateTime>2015-02-28T18:32:28Z</premis:eventDateTime>
+								<premis:eventDetail>automatic treatment</premis:eventDetail>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>2fe6dd20-9e66-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>d8c37cc0-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>f1d30b90-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.20" ADMID="AMD.10 AMD.11 AMD.18">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>2633f890-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>colorProfile</premis:eventType>
+								<premis:eventDateTime>2014-12-15T09:57:07+03:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>2fe6dd20-9e66-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>d8c37cc0-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>f1d30b90-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.3" ADMID="AMD.12 AMD.13">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>a4cd1700-b46c-11e5-a837-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>groupDefinition</premis:eventType>
+								<premis:eventDateTime>2015-02-28T01:00:00+01:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>7adbe020-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.4" ADMID="AMD.12 AMD.14">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>69376d70-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>ocrSegmentation</premis:eventType>
+								<premis:eventDateTime>2015-03-01T16:47:23+01:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>a4c23c30-9e60-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.5" ADMID="AMD.12 AMD.15">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>39fea6e0-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>ocerization</premis:eventType>
+								<premis:eventDateTime>2015-03-01T16:48:25+01:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>4fb57810-9e60-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.6" ADMID="AMD.12 AMD.16">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>3d800570-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>ocrCorrection</premis:eventType>
+								<premis:eventDateTime>2015-03-03T16:47:23+01:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>e8bc4610-9e60-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.7" ADMID="AMD.12 AMD.17">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>40f5a430-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>conversionToAlto</premis:eventType>
+								<premis:eventDateTime>2015-03-04T14:23:33+01:00</premis:eventDateTime>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>0de843d0-9e61-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>performer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.8" ADMID="AMD.12">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>46636970-2f31-11e3-aa6e-0800200c9a66</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>qualityAssessment</premis:eventType>
+								<premis:eventDateTime>2015-03-04T14:36:23+01:00</premis:eventDateTime>
+								<premis:eventDetail>demande de la BnF : ocr hq</premis:eventDetail>
+								<premis:eventOutcomeInformation>
+									<premis:eventOutcome>NQAMOYEN</premis:eventOutcome>
+									<premis:eventOutcomeDetail>
+										<premis:eventOutcomeDetailNote>82.945%</premis:eventOutcomeDetailNote>
+									</premis:eventOutcomeDetail>
+								</premis:eventOutcomeInformation>
+								<premis:eventOutcomeInformation>
+									<premis:eventOutcome>TAUXOCRDEBASE</premis:eventOutcome>
+									<premis:eventOutcomeDetail>
+										<premis:eventOutcomeDetailNote>89.190%
+										</premis:eventOutcomeDetailNote>
+									</premis:eventOutcomeDetail>
+								</premis:eventOutcomeInformation>
+								<premis:eventOutcomeInformation>
+									<premis:eventOutcome>TAUXOCRDEBASECORRIGE</premis:eventOutcome>
+									<premis:eventOutcomeDetail>
+										<premis:eventOutcomeDetailNote>93.695%
+										</premis:eventOutcomeDetailNote>
+									</premis:eventOutcomeDetail>
+								</premis:eventOutcomeInformation>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>implementer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.9" ADMID="AMD.19">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:EVENT">
+						<xmlData>
+							<premis:event>
+								<premis:eventIdentifier>
+									<premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+									<premis:eventIdentifierValue>f082af00-85b4-11e2-98c4-00144f80ca6b</premis:eventIdentifierValue>
+								</premis:eventIdentifier>
+								<premis:eventType>packageDelivery</premis:eventType>
+								<premis:eventDateTime>2015-03-18T17:51:35+01:00</premis:eventDateTime>
+								<premis:eventDetail>Prestation 103 : livraison
+									initiale</premis:eventDetail>
+								<premis:eventOutcomeInformation>
+									<premis:eventOutcome>Gamme livrée : 4P / Fichier numérique type
+										1 Intermédiaire</premis:eventOutcome>
+									<premis:eventOutcomeDetail>
+										<premis:eventOutcomeDetailNote>Gamme demandée : 4P / Fichier
+											numérique type 1
+											Intermédiaire</premis:eventOutcomeDetailNote>
+									</premis:eventOutcomeDetail>
+								</premis:eventOutcomeInformation>
+								<premis:linkingAgentIdentifier>
+									<premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+									<premis:linkingAgentIdentifierValue>d506df60-9e5e-11e5-a837-0800200c9a66</premis:linkingAgentIdentifierValue>
+									<premis:linkingAgentRole>issuer</premis:linkingAgentRole>
+								</premis:linkingAgentIdentifier>
+								<premis:linkingObjectIdentifier>
+									<premis:linkingObjectIdentifierType>BTA</premis:linkingObjectIdentifierType>
+									<premis:linkingObjectIdentifierValue>10-SI-0439</premis:linkingObjectIdentifierValue>
+									<premis:linkingObjectRole>request</premis:linkingObjectRole>
+								</premis:linkingObjectIdentifier>
+								<premis:linkingObjectIdentifier>
+									<premis:linkingObjectIdentifierType>USE</premis:linkingObjectIdentifierType>
+									<premis:linkingObjectIdentifierValue>master</premis:linkingObjectIdentifierValue>
+									<premis:linkingObjectRole>outcome</premis:linkingObjectRole>
+								</premis:linkingObjectIdentifier>
+								<premis:linkingObjectIdentifier>
+									<premis:linkingObjectIdentifierType>USE</premis:linkingObjectIdentifierType>
+									<premis:linkingObjectIdentifierValue>ocr</premis:linkingObjectIdentifierValue>
+									<premis:linkingObjectRole>outcome</premis:linkingObjectRole>
+								</premis:linkingObjectIdentifier>
+								<premis:linkingObjectIdentifier>
+									<premis:linkingObjectIdentifierType>USE</premis:linkingObjectIdentifierType>
+									<premis:linkingObjectIdentifierValue>colorProfile</premis:linkingObjectIdentifierValue>
+									<premis:linkingObjectRole>outcome</premis:linkingObjectRole>
+								</premis:linkingObjectIdentifier>
+							</premis:event>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.10">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>2fe6dd20-9e66-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>RS 150</premis:agentName>
+								<premis:agentType>hardware</premis:agentType>
+								<premis:agentNote>origine : Wicks and Wilson</premis:agentNote>
+								<premis:agentNote>numéro de série : 1234567</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.11">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>d8c37cc0-9e5f-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>SpiFactory</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>origine : SPIGRAPH</premis:agentNote>
+								<premis:agentNote>version : 3.2.12</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.12">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>252c9a70-9e5f-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>SAFIG Madagascar</premis:agentName>
+								<premis:agentType>organization</premis:agentType>
+								<premis:agentNote>origine : groupement Safig</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.13">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>7adbe020-9e5f-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>Document Conversion System</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>origine : ISAKO</premis:agentNote>
+								<premis:agentNote>version : DOCVIEW
+									1.43.3315.27462</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.14">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>a4c23c30-9e60-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>Document Conversion System</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>version : PAGEVIEW
+									1.4.3222.17745</premis:agentNote>
+								<premis:agentNote>origine : ISAKO</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.15">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>4fb57810-9e60-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>FineReader Engine</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>version : 8.1</premis:agentNote>
+								<premis:agentNote>origine : ABBYY</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.16">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>e8bc4610-9e60-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>Document Conversion System</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>version : OCRVIEW 2.0.0.29139</premis:agentNote>
+								<premis:agentNote>origine : ISAKO</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.17">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>0de843d0-9e61-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>Document Conversion System</premis:agentName>
+								<premis:agentType>software</premis:agentType>
+								<premis:agentNote>version : ALTOGEN v1.0.5.0</premis:agentNote>
+								<premis:agentNote>origine : ISAKO</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.18">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>f1d30b90-9e5f-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>SAFIG La Châtre</premis:agentName>
+								<premis:agentType>organization</premis:agentType>
+								<premis:agentNote>origine : groupement Safig</premis:agentNote>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+				<digiprovMD ID="AMD.19">
+					<mdWrap MIMETYPE="text/xml" MDTYPE="PREMIS:AGENT">
+						<xmlData>
+							<premis:agent>
+								<premis:agentIdentifier>
+									<premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+									<premis:agentIdentifierValue>d506df60-9e5e-11e5-a837-0800200c9a66</premis:agentIdentifierValue>
+								</premis:agentIdentifier>
+								<premis:agentName>Groupement SAFIG</premis:agentName>
+								<premis:agentType>organization</premis:agentType>
+							</premis:agent>
+						</xmlData>
+					</mdWrap>
+				</digiprovMD>
+			</amdSec>
+			<fileSec>
+				<fileGrp USE="master" ID="GRP.1">
+					<file CHECKSUMTYPE="MD5" CHECKSUM="580256aaea9079083786b867bacc2552" ADMID="AMD.1 AMD.2" ID="master.1">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000001.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="17990c6ef8e35cbdb73ebcedd00cd3f2" ADMID="AMD.1 AMD.2" ID="master.2">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000002.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="24755472cab75fefac3350ce8c2ff76e" ADMID="AMD.1 AMD.2" ID="master.3">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000003.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="c113c95aceb9e58effb92e807e6b17ff" ADMID="AMD.1 AMD.2" ID="master.4">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000004.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="cdb27460859437fc402f43d1ff369b66" ADMID="AMD.1 AMD.2" ID="master.5">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000005.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="38bf8dd398e791772126e3df9b00dd93" ADMID="AMD.1 AMD.2" ID="master.6">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000006.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="fd1150b5e0f07ea22c88abeefa6ae589" ADMID="AMD.1 AMD.2" ID="master.7">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000007.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="55fa4a8714c9cd35a0858f94859f6fb2" ADMID="AMD.1 AMD.2" ID="master.8">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000008.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="68dbfd9f828bee458274402c01a47596" ADMID="AMD.1 AMD.2" ID="master.9">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000009.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="49f889e73608e56079dc774fb40e46f2" ADMID="AMD.1 AMD.2" ID="master.10">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000010.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="c1dc723adeed7ff21e237f514f978615" ADMID="AMD.1 AMD.2" ID="master.11">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000011.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="ccb4f287abea2106f7590221eef0e23d" ADMID="AMD.1 AMD.2" ID="master.12">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000012.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="a9e97c6af0210a2ff46e74c668c59421" ADMID="AMD.1 AMD.2" ID="master.13">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000013.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="dffbeadef4790f8847b3463c2fc995af" ADMID="AMD.1 AMD.2" ID="master.14">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000014.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="bda8ccdaf55666682f364ef9b0e7d9ee" ADMID="AMD.1 AMD.2" ID="master.15">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000015.tif"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="8d5296f1ce47e4906cde567cba3e4715" ADMID="AMD.1 AMD.2" ID="master.16">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="master/T0000016.tif"/>
+					</file>
+				</fileGrp>
+				<fileGrp USE="ocr" ID="GRP.2">
+					<file CHECKSUMTYPE="MD5" CHECKSUM="153f0bbc69635fc282c37e5e3b5699fe" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.1">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000001.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="b936fb3fe9e0f4abe2ee69b4c46788f3" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.2">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000002.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="4a28886b196a55bc10aa0cd34cb979cd" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.3">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000003.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="7ed2dd7348f80edebf91e92b7ab15073" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.4">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000004.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="e2f9c3d12669c23b4ae2649e3bdbe0ae" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.5">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000005.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="a425a0b5f50a5182f0f89e1681c26b7a" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.6">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000006.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="369010ccc3d41c42bb8396ea824c57b4" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.7">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000007.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="775bd68d7c652ce31811bf3b2ace3bf6" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.8">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000008.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="d31a19f795551a495c277eff19722ae7" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.9">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000009.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="e372140b3bcfda841fc5ca00f9b9ca64" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.10">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000010.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="d86b8002297735886c57ea6fddc5ac77" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.11">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000011.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="75aa2058d527280a55a71e5900edddb4" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.12">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000012.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="3e3e9448777a4c1473ee7a75989e0b23" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.13">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000013.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="bf7bca8a887709ae7cc78b31915f5de7" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.14">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000014.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="f54eda8ce8bd4a7dd15b72d874cbc0ad" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.15">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000015.xml"/>
+					</file>
+					<file CHECKSUMTYPE="MD5" CHECKSUM="5b717845bd8b33a5d5ce3e5f363d6d6e" ADMID="AMD.4 AMD.5 AMD.6 AMD.7 AMD.8" ID="ocr.16">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="ocr/X0000016.xml"/>
+					</file>
+				</fileGrp>
+				<fileGrp USE="colorProfile" ID="GRP.3">
+					<file CHECKSUMTYPE="MD5" CHECKSUM="5b717845bd8b33d5d5c33e5f343d6d6d" ADMID="AMD.20" ID="colorProfile.1">
+						<FLocat xlink:type="simple" LOCTYPE="URL" xlink:href="colorProfile/5529629.jp2"/>
+					</file>
+				</fileGrp>
+			</fileSec>
+			<structMap TYPE="physical">
+				<div TYPE="set" ID="DIV.1" DMDID="DMD.1">
+					<div TYPE="group" ID="DIV.2" DMDID="DMD.2" ADMID="AMD.3 AMD.9">
+						<div TYPE="object" ORDERLABEL="121" ORDER="1" ID="DIV.3" DMDID="DMD.3">
+							<fptr FILEID="master.1"/>
+							<fptr FILEID="ocr.1"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="122" ORDER="2" ID="DIV.4" DMDID="DMD.4">
+							<fptr FILEID="master.2"/>
+							<fptr FILEID="ocr.2"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="123" ORDER="3" ID="DIV.5" DMDID="DMD.5">
+							<fptr FILEID="master.3"/>
+							<fptr FILEID="ocr.3"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="124" ORDER="4" ID="DIV.6" DMDID="DMD.6">
+							<fptr FILEID="master.4"/>
+							<fptr FILEID="ocr.4"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="125" ORDER="5" ID="DIV.7" DMDID="DMD.7">
+							<fptr FILEID="master.5"/>
+							<fptr FILEID="ocr.5"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="126" ORDER="6" ID="DIV.8" DMDID="DMD.8">
+							<fptr FILEID="master.6"/>
+							<fptr FILEID="ocr.6"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="127" ORDER="7" ID="DIV.9" DMDID="DMD.9">
+							<fptr FILEID="master.7"/>
+							<fptr FILEID="ocr.7"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="128" ORDER="8" ID="DIV.10" DMDID="DMD.10">
+							<fptr FILEID="master.8"/>
+							<fptr FILEID="ocr.8"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="129" ORDER="9" ID="DIV.11" DMDID="DMD.11">
+							<fptr FILEID="master.9"/>
+							<fptr FILEID="ocr.9"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="130" ORDER="10" ID="DIV.12" DMDID="DMD.12">
+							<fptr FILEID="master.10"/>
+							<fptr FILEID="ocr.10"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="131" ORDER="11" ID="DIV.13" DMDID="DMD.13">
+							<fptr FILEID="master.11"/>
+							<fptr FILEID="ocr.11"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="132" ORDER="12" ID="DIV.14" DMDID="DMD.14">
+							<fptr FILEID="master.12"/>
+							<fptr FILEID="ocr.12"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="133" ORDER="13" ID="DIV.15" DMDID="DMD.15">
+							<fptr FILEID="master.13"/>
+							<fptr FILEID="ocr.13"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="134" ORDER="14" ID="DIV.16" DMDID="DMD.16">
+							<fptr FILEID="master.14"/>
+							<fptr FILEID="ocr.14"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="135" ORDER="15" ID="DIV.17" DMDID="DMD.17">
+							<fptr FILEID="master.15"/>
+							<fptr FILEID="ocr.15"/>
+						</div>
+						<div TYPE="object" ORDERLABEL="136" ORDER="16" ID="DIV.18" DMDID="DMD.18">
+							<fptr FILEID="master.16"/>
+							<fptr FILEID="ocr.16"/>
+						</div>
+					</div>
+				</div>
+			</structMap>
+			<structMap TYPE="attachment">
+				<div TYPE="set" ID="DIV.19" DMDID="DMD.1">
+					<div TYPE="group" ID="DIV.20" DMDID="DMD.2" ADMID="AMD.3 AMD.9">
+						<div TYPE="object" ORDER="1" ID="DIV.21">
+							<fptr FILEID="colorProfile.1"/>
+						</div>
+					</div>
+				</div>
+			</structMap>
+		</mets>
+	</Appendix>
+</METS_Profile>
